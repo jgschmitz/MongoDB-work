@@ -1,0 +1,11 @@
+db.person.findOne()
+{
+    _id: ObjectID("AAF1"),
+    name: "Kate Monster",
+    tasks [     // array of references to Task documents
+        ObjectID("ADF9"), 
+        ObjectID("AE02"),
+        ObjectID("AE73") 
+        // etc
+    ]
+}
