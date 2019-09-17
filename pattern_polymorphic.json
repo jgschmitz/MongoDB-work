@@ -2,9 +2,9 @@
     "_id": "<objectId>",
     "first_name": "<string>",
     "last_name": "<string>",
-    "recruiting_source":" <string>",
+    "recruiting_source": "<string>",
     "engineer_level": "<int>",
-    "extend_offer":"<string>",
+    "extend_offer": "<string>",
     "education": [{
       "level": "<string>",
       "subject": "<string>"
@@ -21,8 +21,7 @@
     "_id": "<objectId>",
     "first_name": "<string>",
     "last_name": "<string>",
-    "recruiting_source":" <string>",
-    "program_affiliation": "<string>",
+    "recruiting_source": "<string>",
     "team_placement": "<string>",
     "start_date": "<date>",
     "end_date": "<date>",
@@ -36,12 +35,9 @@
     "notes": "<string>"
   }, {
     "_id": "<objectId>",
-    "name": {
-      "first_name": "<string>",
-      "last_name": "<string>"
-    },
-    "program_affiliation": "<string>",
-    "recruiting_source":" <string>",
+    "first_name": "<string>",
+    "last_name": "<string>",
+    "recruiting_source": "<string>",
     "team_placement": "<string>",
     "start_date": "<date>",
     "end_date": "<date>",
@@ -62,3 +58,4 @@
     },
     "notes": "<string>"
   }]
+
