@@ -1,0 +1,11 @@
+> db.parts.findOne()
+{
+    _id : ObjectID('AAAA'),
+    partno : '123-aff-456',
+    name : '#4 grommet',
+    product_name : 'left-handed smoke shifter',   // Denormalized from the ‘Product’ document
+    product_catalog_number: 1234,                     // Ditto
+    qty: 94,
+    cost: 0.94,
+    price: 3.99
+}
