@@ -1,0 +1,17 @@
+//  Get log message from monitoring system
+logmsg = get_log_msg();
+log_message_here = logmsg.msg;
+log_ip = logmsg.ipaddr;
+  // Get current timestamp
+now = new Date()
+  // Find the _id for the host I’m updating
+host_doc = db.hosts.findOne({ipaddr : log_ip },{_id:1});  // Don’t return the whole document
+host_id = host_doc._id;
+  // Insert the log message, the parent reference, and the denormalized data into the ‘many’ side
+db.logmsg.save({time : now, message : log_message_here, ipaddr : log_ip, host : host_id ) });
+  // Push the denormalized log message onto the ‘one’ side
+db.hosts.update( {_id: host_id }, 
+        {$push : {logmsgs : { $each:  [ { time : now, message : log_message_here } ],
+                           $sort:  { time : 1 },  // Only keep the latest ones 
+                           $slice: -1000 }        // Only keep the latest 1000
+         }} );
