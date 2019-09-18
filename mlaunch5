@@ -1,0 +1,2 @@
+#blast out 5 node replica set
+mlaunch --replicaset --nodes 5
