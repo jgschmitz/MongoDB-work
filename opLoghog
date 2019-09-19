@@ -1,3 +1,4 @@
+#Collections generating the largest amount of oplog.
 rs.slaveOk();
 use local;
 nsMap = {}
