@@ -1,0 +1,3 @@
+db.<collection>.stats().maxSize
+e.g.
+db.oplog.rs.stats().maxSize
