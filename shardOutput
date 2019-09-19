@@ -1,0 +1,5 @@
+use <database>;
+var collstats = db.<collection>.stats()
+for (var shard_name in collstats["shards"]) {
+        print(shard_name + "," + collstats["shards"][shard_name].size + "," + collstats["shards"][shard_name].storageSize);
+}
