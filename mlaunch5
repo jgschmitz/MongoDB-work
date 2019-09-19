@@ -1,2 +1,2 @@
-#blast out 5 node replica set
+#blast out 5 node replica set with mtools
 mlaunch --replicaset --nodes 5
