@@ -1,0 +1,15 @@
+rs.slaveOk();
+use local;
+nsMap = {}
+db.oplog.rs.find().forEach(function(x) {
+    if ( isNaN(nsMap[x.ns]) )
+    {
+        nsMap[x.ns] = Object.bsonsize(x);
+    }
+    else
+    {
+        nsMap[x.ns] += Object.bsonsize(x);
+    }
+}
+);
+nsMap
