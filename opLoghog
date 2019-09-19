@@ -1,6 +1,6 @@
 #Collections generating the largest amount of oplog.
 rs.slaveOk();
-use local;
+use training;
 nsMap = {}
 db.oplog.rs.find().forEach(function(x) {
     if ( isNaN(nsMap[x.ns]) )
