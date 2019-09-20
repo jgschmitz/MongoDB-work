@@ -1,3 +1,4 @@
+#from mongo shell
 > db.products.findOne()
 {
     name : 'left-handed smoke shifter',
