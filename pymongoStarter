@@ -3,6 +3,10 @@ Before we start, make sure that you have the PyMongo distribution installed. In 
 
 >>> import pymongo
 This tutorial also assumes that a MongoDB instance is running on the default host and port. Assuming you have downloaded and installed MongoDB, you can start it like so:
+To check
+ps -ef | grep mongo
+  502 19324 76496   0  8:48AM ttys000    0:00.00 grep mongo
+  502 13246  1327   0  9Sep19 ttys002    9:10.42 mongod
 
 $ mongod
 Making a Connection with MongoClient
