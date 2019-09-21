@@ -1,1 +1,4 @@
+#you can snag mtools here http://blog.rueckstiess.com/mtools/mlaunch.html
+
 mlaunch --replicaset --sharded tic tac toe
+
