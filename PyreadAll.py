@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+python3
 
 from pymongo import MongoClient
 
