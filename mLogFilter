@@ -1,0 +1,2 @@
+#filter by namespace
+mlogfilter mongod.log --namespace admin.\$cmd --slow 1000
