@@ -1,3 +1,4 @@
+#From mongodb shell
 > db.parts.findOne()
 {
     _id : ObjectID('AAAA'),
