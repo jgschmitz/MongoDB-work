@@ -1,0 +1,1 @@
+mlogfilter mongod.log --word assert warning error
