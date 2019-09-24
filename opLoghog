@@ -1,4 +1,4 @@
-#Show collections generating the largest amount of oplog.
+#Show collections generating the largest oplog. +++
 rs.slaveOk();
 use training;
 nsMap = {}
