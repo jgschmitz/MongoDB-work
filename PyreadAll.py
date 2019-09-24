@@ -1,5 +1,5 @@
 python3
-#using pymongo driver
+#using pymongo driver the only way to python
 
 from pymongo import MongoClient
 
