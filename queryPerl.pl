@@ -1,3 +1,5 @@
+#!/usr/bin/perl -w
+
 open(my $fh, '<', "$file_path") or return 0;
     while (my $line = <$fh>) {
         chomp($line);
