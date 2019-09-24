@@ -1,1 +1,2 @@
+#collection key scan
 mlogfilter mongod.log --word assert warning error
