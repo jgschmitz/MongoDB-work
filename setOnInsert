@@ -1,0 +1,22 @@
+db.test.update(
+        { a: 1 },
+        [{ $set: 
+            { 
+                a: 1, 
+                b: 4,
+                created_at: {$cond: [
+                                {$eq:[ {$type:"$_id"}, "missing" ] },
+                                ISODate(),
+                                "$created_at"] 
+                            },
+                updated_at: {$cond: [
+                                {$and : [
+                                    {$or: [{$ne : ["$a", 1]},{$ne : ["$b", 4]}]}, 
+                                    {$ne:[ {$type:"$_id"}, "missing" ] }]},
+                                ISODate(),
+                                "$updated_at"] 
+                        }
+            } 
+        }],
+        {upsert: true}
+)
