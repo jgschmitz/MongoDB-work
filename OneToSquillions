@@ -2,7 +2,7 @@
 > db.logmsg.findOne()
 {
     time : ISODate("2014-03-28T09:42:41.382Z"),
-    message : 'cpu is on fire!',
+    message : 'she's gonna blow!',
     ipaddr : '127.66.66.66',
     host: ObjectID('AAAB')
 }
