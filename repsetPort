@@ -1,0 +1,1 @@
+mlaunch --replicaset --nodes 3 --port 30000
