@@ -1,4 +1,5 @@
 #!/usr/bin/perl -w
+use; strict
 my @serchstra;
 my $ccount=0;
 for(my $id=0;$id < keys %hfields;$id++){
