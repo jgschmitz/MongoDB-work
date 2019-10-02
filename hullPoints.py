@@ -1,5 +1,5 @@
 import MongoDB
-
+# this is in progress for XTO
 def convex_hull(points):
 	"""Computes the convex hull of a set of 2D points.
  
