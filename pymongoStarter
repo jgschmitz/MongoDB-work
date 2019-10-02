@@ -1,4 +1,4 @@
-Prerequisites
+Prerequisites make sure you load all the things
 Before we start, make sure that you have the PyMongo distribution installed. In the Python shell, the following should run without raising an exception:
 
 >>> import pymongo
