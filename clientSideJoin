@@ -1,4 +1,4 @@
-#client side join from mongo shell
+#client side join borked
 // Fetch the product document
 > product = db.products.findOne({catalog_number: 1234});  
   // Create an array of ObjectID()s containing *just* the part numbers
