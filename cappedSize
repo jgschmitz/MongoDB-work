@@ -1,4 +1,4 @@
-#create collection with capped size
+#create collection with capped size using the mongo shell
 db.<collection>.stats().maxSize
 e.g.
 db.oplog.rs.stats().maxSize
