@@ -1,4 +1,4 @@
-#from mongo shell - mongoDb 4 and above
+#from mongo shell - mongoDb 4+ please
 > db.products.findOne()
 {
     name : 'left-handed smoke shifter',
