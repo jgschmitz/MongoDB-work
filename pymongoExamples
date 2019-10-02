@@ -1,4 +1,4 @@
-#some pymongod examplage
+#some pymongod examples
 
 from pymongo import MongoClient
 
