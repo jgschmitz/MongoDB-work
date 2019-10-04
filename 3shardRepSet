@@ -1,4 +1,5 @@
 #you can snag mtools here http://blog.rueckstiess.com/mtools/mlaunch.html
+#you can also lunch a replica set 
 
 mlaunch --replicaset --sharded tic tac toe
 
