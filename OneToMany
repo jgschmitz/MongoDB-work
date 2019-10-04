@@ -1,5 +1,5 @@
 #From mongodb shell
-#One to Many - 
+#One to Many example 
 > db.parts.findOne()
 {
     _id : ObjectID('AAAA'),
