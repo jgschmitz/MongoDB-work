@@ -1,7 +1,7 @@
 #!/usr/local/bin/perl -w
 use; strict
 my @serchstra;
-my $ccount=0;
+my $ccount=1;
 for(my $id=0;$id < keys %hfields;$id++){
     info("compose search $id ",query_parameters->get("columns[$id][searchable]"),' >',query_parameters->get("columns[$id][search][value]"),'< ',query_parameters->get("columns[$id][data]"));
     if(query_parameters->get("columns[$id][searchable]") eq 'true' &&
