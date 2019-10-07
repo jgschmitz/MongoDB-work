@@ -4,7 +4,7 @@ log_message_here = logmsg.msg;
 log_ip = logmsg.ipaddr;
   // Get current timestamp
 now = new Date()
-  // Find the _id for the host I’m updating
+  // Find the _id for the node I’m updating
 host_doc = db.hosts.findOne({ipaddr : log_ip },{_id:1});  // Don’t return the whole document
 host_id = host_doc._id;
   // Insert the log message, the parent reference, and the denormalized data into the ‘many’ side
