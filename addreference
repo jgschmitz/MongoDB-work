@@ -2,7 +2,7 @@
 db.tasks.findOne()
 {
     _id: ObjectID("ADF9"), 
-    description: "Write lesson plan",
+    description: "Fix lesson plan",
     due_date:  ISODate("2014-04-01"),
     owner: ObjectID("AAF1")     // Reference to Person document
 }
