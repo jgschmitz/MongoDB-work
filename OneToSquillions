@@ -1,4 +1,4 @@
-# from mongo shell 4.0 and higher using the mtools kit
+# from mongo shell
 > db.logmsg.findOne()
 {
     time : ISODate("2014-03-28T09:42:41.382Z"),
