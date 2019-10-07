@@ -26,7 +26,7 @@ sub new {
 
 sub _set_connection {
     my $self = shift;
-    my $client = MongoDB->connect('mongodb://localhost');
+    my $client = MongoDB->connect('mongodb://darkstar');
     return $client;
 }
 
