@@ -33,6 +33,7 @@ services:
       # uncomment the following lines and replace with the names of your certificate and key file.
       # CHARTS_HTTPS_CERTIFICATE_FILE: charts-https.crt
       # CHARTS_HTTPS_CERTIFICATE_KEY_FILE: charts-https.key
+      # CHARTS_HTTPS_CERTIFICATE_KEY_FILE: charts-https.brk
 
       # This environment variable controls the built-in support widget and
       # metrics collection in MongoDB Charts. To disable both, set the value
