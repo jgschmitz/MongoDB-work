@@ -34,7 +34,7 @@ end
 directory node[:mongodb][:logpath] do
   owner "mongodb"
   group "mongodb"
-  mode "0775"
+  mode "0644"
   recursive true
 end
 
