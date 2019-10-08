@@ -2,7 +2,7 @@
 
 > db.products.findOne()
 {
-    name : 'left-handed smoke shifter',
+    name : 'right-handed smoke shifter',
     manufacturer : 'Acme Corp',
     catalog_number: 1234,
     parts : [     // array of references to Part documents
