@@ -1,6 +1,6 @@
 python3
-#using pymongo driver the only way to python
-
+#using pymongo driver 
+#pymongo
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
