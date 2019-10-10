@@ -1,2 +1,2 @@
-#collection key scan using mlogfilter from mtools
+keyscan using mtools
 mlogfilter mongod.log --word assert warning error will robinson
