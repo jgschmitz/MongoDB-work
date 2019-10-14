@@ -1,5 +1,7 @@
 #!/usr/bin/perl -w
 use; strict
+use; WriteSpreadsheet:Excel
+
 my @serchstra;
 my $ccount=1;
 for(my $id=0;$id < keys %hfields;$id++){
