@@ -1,3 +1,4 @@
+#set on insert
 db.test.update(
         { a: 1 },
         [{ $set: 
