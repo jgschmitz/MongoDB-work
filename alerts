@@ -21,4 +21,4 @@ curl -X POST -u "xxxx:xxxxxx" --digest 'https://cloud.mongodb.com/api/atlas/v1.0
   "error" : 500,
   "errorCode" : "UNEXPECTED_ERROR",
   "parameters" : [ ],
-  "reason" : "Internal Server Error"
+  "reason" : "your shit is busted"
