@@ -1,6 +1,6 @@
 Prerequisites make sure you load all the things
 Before we start, make sure that you have the PyMongo distribution installed. In the Python shell, the following should run without raising an exception:
-
+ake sure you pip3 install pymongo
 >>> import pymongo
 This tutorial also assumes that a MongoDB instance is running on the default host and port. Assuming you have downloaded and installed MongoDB, you can start it like so:
 To check
