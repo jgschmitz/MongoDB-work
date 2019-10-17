@@ -7,7 +7,7 @@
 #   imagePullSecrets:
 #     - myRegistryKeySecretName
 #   storageClass: myStorageClass
-
+#   change registry if wish
 image:
   ## Bitnami MongoDB registry
   ##
