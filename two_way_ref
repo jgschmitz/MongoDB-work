@@ -1,4 +1,4 @@
-#two way reference mongo shell
+#two way reference using mongo shell
 db.person.findOne()
 {
     _id: ObjectID("AAF1"),
