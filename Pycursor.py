@@ -1,5 +1,5 @@
 python3
-#lod the mods
+
 from pymongo import MongoClient
 #mongoclient is hit or miss
 
