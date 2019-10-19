@@ -1,5 +1,4 @@
 #mongodb shell one go many example
-
 > db.parts.findOne()
 {
     _id : ObjectID('AAAA'),
