@@ -1,21 +1,21 @@
 curl -X POST -u "xxxx:xxxxxx" --digest 'https://cloud.mongodb.com/api/atlas/v1.0/groups/5cd520dca6f239768087f39e/alertConfigs?prety=true' -H "Content-Type: application/json" --data '
-> {
->     "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD",
->     "metricThreshold" : {
->         "metricName" : "CONNECTIONS",
->         "operator" : "GREATER_THAN",
->         "threshold" : 300
->     },
->      "enabled" : true,
->      "notifications" : [ {
->        "typeName" : "GROUP",
->        "intervalMin" : 5,
->        "delayMin" : 0,
->        "smsEnabled" : false,
->        "emailEnabled" : true,
->        "emailAddress" : "nikhil.singh@mongodb.com"
->      } ]
-> }'
+{
+     "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD",
+     "metricThreshold" : {
+         "metricName" : "CONNECTIONS",
+         "operator" : "GREATER_THAN",
+         "threshold" : 300
+     },
+      "enabled" : true,
+      "notifications" : [ {
+        "typeName" : "GROUP",
+        "intervalMin" : 5,
+        "delayMin" : 0,
+        "smsEnabled" : false,
+        "emailEnabled" : true,
+        "emailAddress" : "nikhil.singh@mongodb.com"
+      } ]
+ }'
 {
   "detail" : "Unexpected error.",
   "error" : 500,
