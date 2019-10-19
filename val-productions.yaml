@@ -9,7 +9,7 @@
 #   storageClass: myStorageClass
 #   change registry if wish
 image:
-  ## Bitnami MongoDB registry
+  ## Bitnami MongoDB registry or pull standard mongo image
   ##
   registry: docker.io
   ## Bitnami MongoDB image name
