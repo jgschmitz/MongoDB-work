@@ -10,3 +10,4 @@ db.person.findOne()
         // etc
     ]
 }
+learn more at mongo university
