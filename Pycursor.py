@@ -1,7 +1,6 @@
 python3
 
 from pymongo import MongoClient
-#mongoclient is hit or miss
 
 client = MongoClient('mongodb://localhost:27017/')
 
