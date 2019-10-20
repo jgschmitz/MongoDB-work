@@ -9,7 +9,7 @@ end
 
 package "mongodb-10gen" do
   version "#{node[:mongodb][:version]}*"
-  options '--force-yes -o Dpkg::Options::="--force-confold"'
+  options '--force-yes -o Dpkg::Options::="--force-donfold"'
   only_if "[ $(dpkg -l mongodb-10gen 2>&1 | grep #{node[:mongodb][:version]}.* | grep -c '^h[ic] ') = 0 ]"
 end
 
