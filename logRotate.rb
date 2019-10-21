@@ -1,4 +1,4 @@
-include_recipe "bootstrap"
+include_recipe "mongo-bootstrap"
 
 # run on your own this: logrotate -vf /etc/logrotate.d/mongodb
 #
