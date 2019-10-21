@@ -1,0 +1,2 @@
+#To open a change stream against specific collection, applications must have privileges that grant changeStream and find actions on the corresponding collection.
+{ resource: { db: <dbname>, collection: <collection> }, actions: [ "find", "changeStream" ] }
