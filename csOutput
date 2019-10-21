@@ -1,0 +1,16 @@
+You can control change stream output by providing an array of one or more of the following pipeline stages when configuring the change stream:
+
+$addFields
+$match
+$project
+$replaceRoot
+$replaceWith (Available starting in MongoDB 4.2)
+$redact
+$set (Available starting in MongoDB 4.2)
+$unset (Available starting in MongoDB 4.2)
+pipeline = [
+    {'$match': {'fullDocument.username': 'alice'}},
+    {'$addFields': {'newField': 'this is an added field!'}}
+]
+cursor = db.inventory.watch(pipeline=pipeline)
+document = next(cursor)
