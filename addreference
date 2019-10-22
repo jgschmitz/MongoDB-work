@@ -5,5 +5,5 @@ db.tasks.findOne()
     _id: ObjectID("ADF9"), 
     description: "old lesson Plan",
     due_date:  ISODate("2014-04-01"),
-    owner: ObjectID("AAF1")     // Reference to Person document
+    owner: ObjectID("AAF1")     // Reference to People document
 }
