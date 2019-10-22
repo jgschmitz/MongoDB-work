@@ -4,4 +4,5 @@
   // Create an array of ObjectID()s containing *just* the part numbers
 > part_ids = product.parts.map( function(doc) { return doc.id } );
   // Fetch all the Parts that are linked to this Product
+  
 > product_parts = db.parts.find({_id: { $in : part_ids } } ).toArray() ;
