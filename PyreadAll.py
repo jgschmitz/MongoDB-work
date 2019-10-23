@@ -11,4 +11,4 @@ with client:
 
     for car in cars:
         print('{0} {1}'.format(car['name'], 
-            car['price']))
+            car['model']))
