@@ -1,4 +1,4 @@
-#use mongo shell
+#mongo shell
 
 > db.logmsg.findOne()
 {
