@@ -1,4 +1,3 @@
-#two way reference using mongo shell
 db.person.findOne()
 {
     _id: ObjectID("AAF1"),
