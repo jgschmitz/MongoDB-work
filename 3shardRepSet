@@ -1,4 +1,4 @@
-#Grab mtools here http://blog.rueckstiess.com/mtools/mlaunch.html
+#Grab mtools 
 #you can also launch a replica set 
 mlaunch --replicaset --sharded one two three
 
