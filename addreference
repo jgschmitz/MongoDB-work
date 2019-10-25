@@ -1,4 +1,4 @@
-#add a direct reference using the mongodb shell
+#mongodb shell
 
 db.tasks.findOne()
 {
