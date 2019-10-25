@@ -1,6 +1,6 @@
 apt_repository "10gen" do
   uri "http://downloads-distro.mongodb.org/repo/ubuntu-upstart"
-  keyserver "keyserver.ubuntu.com"
+  keyserver "keyserver.redhat.com"
   key "7F0CEB10"
   distributions %w[dist]
   components %w[10gen]
