@@ -4,8 +4,7 @@ mydf = toJSON(df)
 req <- new_handle() %>%
    handle_setopt("customrequest"="GET", postfields = mydf) %>%
    handle_setheaders("Content-Type"= "application/json", "Cache-Control"="no-cache") %>%
-   curl_fetch_memory(url = "http://IP address/getdataframe")
- 
+   curl_fetch_memory(url = "http://IP address/getdataframe") 
 jsonlite::prettify(rawToChar(req$content))
  
 
