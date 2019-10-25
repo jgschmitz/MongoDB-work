@@ -1,4 +1,4 @@
-Jeff Schmitz 2019 - Home World Earth
+Jeff Schmitz 2019 -
 
 MongoDB README
 
