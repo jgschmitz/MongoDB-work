@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 use; strict
-use; WriteSpreadsheet:Excel
+
 
 my @serchstra;
 my $ccount=1;
