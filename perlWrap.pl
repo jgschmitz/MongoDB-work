@@ -4,7 +4,7 @@ use strict;
 use Exporter;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 use MongoDB;
-use pymongo;
+
 
 $VERSION     = 1.00;
 @ISA         = qw(Exporter);
