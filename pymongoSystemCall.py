@@ -1,4 +1,5 @@
 python3
+#kinda now
 
 from pymongo import MongoClient
 from pprint import pprint
