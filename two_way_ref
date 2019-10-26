@@ -1,7 +1,7 @@
 db.person.findOne()
 {
     _id: ObjectID("AAF1"),
-    name: "Kate Monster",
+    name: "Kate Spade",
     tasks [     // array of references to Task documents
         ObjectID("ADF9"), 
         ObjectID("AE02"),
@@ -9,4 +9,4 @@ db.person.findOne()
         // etc
     ]
 }
-learn more at mongo university
+
