@@ -1,4 +1,4 @@
-#Grab mtools 
+#go and and download mtools 
 #you can also launch a replica set 
 mlaunch --replicaset --sharded one two three
 
