@@ -1,3 +1,5 @@
+#test script to run against Atlas so showcase the profiler capabilities in Atlas
+
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]
 then
   echo "No arguments or incorrect argument(s) supplied. Please run with 'CONNECTION_STRING USERNAME PASSWORD' as parameters."
