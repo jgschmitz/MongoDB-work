@@ -1,4 +1,4 @@
-//  Get log message from datadog
+//  Get log message
 logmsg = get_log_msg();
 log_message_here = logmsg.msg;
 log_ip = logmsg.ipaddr;
