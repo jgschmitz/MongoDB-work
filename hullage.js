@@ -1,6 +1,5 @@
 "use strict";
 
-
 var convexhull = new function() {
 	
 	// Returns a new array of points representing the convex hull of
