@@ -1,4 +1,4 @@
-#Output size of every collection on every shard in CSV format
+#Outputs the size of every collection on every shard in CSV format
 
 use <database>;
 var collstats = db.<collection>.stats()
