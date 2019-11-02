@@ -1,4 +1,4 @@
 #go and and download mtools 
-#you can also launch a replica set 
+#this will create a sharded replica set mongodb
 mlaunch --replicaset --sharded one two three
 
