@@ -1,2 +1,2 @@
-#keyscan using mtools
+#keyscan using mtools /python scripts
 mlogfilter mongod.log --warning errors detected
