@@ -6,7 +6,7 @@ db.person.findOne()
         ObjectID("ADF9"), 
         ObjectID("AE02"),
         ObjectID("AE73") 
-        // etc
+        // etc etc
     ]
 }
 
