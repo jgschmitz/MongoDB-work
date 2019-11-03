@@ -1,4 +1,4 @@
-image:
+
   ## Bitnami MongoDB registry or pull standard mongo - this is the smaller image
   ##
   registry: docker.io
