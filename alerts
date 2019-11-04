@@ -8,7 +8,7 @@ curl -X POST -u "xxxx:xxxxxx" --digest 'https://cloud.mongodb.com/api/atlas/v1.0
      },
       "enabled" : true,
       "notifications" : [ {
-        "typeName" : "GROUP",
+        "typeName" : "GROUPS",
         "intervalMin" : 5,
         "delayMin" : 0,
         "smsEnabled" : false,
