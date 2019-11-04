@@ -1,3 +1,4 @@
+#should be one to squillions
 //  Get log message
 logmsg = get_log_msg();
 log_message_here = logmsg.msg;
