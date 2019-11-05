@@ -1,4 +1,4 @@
-#create collection capped size using the shell
+#collection capped size using the shell
 mongo
 db.<collection>.stats().maxSize
 e.g.
