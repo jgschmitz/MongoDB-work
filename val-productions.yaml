@@ -1,8 +1,8 @@
-  ##Pull standard mongo - this is the smaller image
-  ##
+  ##ull standard mongo - this is the smaller image
+  #
   registry: docker.io
-  ## Bitnami MongoDB image name
-  ##
+  #Bitnami MongoDB image name
+  #
   repository: bitnami/mongodb
   ## Bitnami MongoDB image tag
   ## ref: https://hub.docker.com/r/bitnami/mongodb/tags/
