@@ -1,3 +1,4 @@
+#one to squillions example
 mongo
 > db.logmsg.findOne()
 {
