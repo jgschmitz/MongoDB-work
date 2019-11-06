@@ -1,4 +1,3 @@
-
   ##Pull standard mongo - this is the smaller image
   ##
   registry: docker.io
