@@ -82,4 +82,4 @@ def list_convex_hull(points):
 # 		ch[i] = convex_hull(LISTA[i])
 # 	return ch
 
-# print(list_convex_hull(x))
+print(list_convex_hull(x))
