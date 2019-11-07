@@ -1,3 +1,4 @@
+#chef pull latest rev
 apt_repository "10gen" do
   uri "http://downloads-distro.mongodb.org/repo/ubuntu-upstart"
   keyserver "keyserver.redhat.com"
