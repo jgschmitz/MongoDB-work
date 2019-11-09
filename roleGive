@@ -1,3 +1,3 @@
-#assign role to user in mongoDB
+#assign role to user in mongo
 use admin
 db.createUser({ user:"admin", pwd: "pass", roles: [{role: "userAdminAnyDatabase", db: "admin"}] })
