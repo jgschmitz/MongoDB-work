@@ -1,6 +1,6 @@
 #Outputs the size of every collection on every shard in CSV format
 
-use <database>;
+use <darkstar>;
 var collstats = db.<collection>.stats()
 for (var shard_name in collstats["shards"]) {
         print(shard_name + "," + collstats["shards"][shard_name].size + "," + collstats["shards"][shard_name].storageSize);
