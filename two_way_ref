@@ -1,3 +1,4 @@
+>mongo
 db.person.findOne()
 {
     _id: ObjectID("AAF1"),
