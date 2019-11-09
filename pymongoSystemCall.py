@@ -1,6 +1,5 @@
 python3
-#kinda now
-
+#making a system call in mongodb
 from pymongo import MongoClient
 from pprint import pprint
 
