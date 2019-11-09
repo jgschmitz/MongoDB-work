@@ -46,7 +46,7 @@ With insert_many() method, we insert eight documents into the cars collection, w
 { "_id" : ObjectId("5b41eb21b9c5d915989d48ab"), "price" : 29000, "name" : "Volvo" }
 { "_id" : ObjectId("5b41eb21b9c5d915989d48ac"), "price" : 350000, "name" : "Bentley" }
 { "_id" : ObjectId("5b41eb21b9c5d915989d48ad"), "price" : 21000, "name" : "Citroen" }
-{ "_id" : ObjectId("5b41eb21b9c5d915989d48ae"), "price" : 41400, "name" : "Hummer" }
+{ "_id" : ObjectId("5b41eb21b9c5d915989d48ae"), "price" : 41400, "name" : "Saab" }
 { "_id" : ObjectId("5b41eb21b9c5d915989d48af"), "price" : 21600, "name" : "Volkswagen" }
 We verify the data with mongo tool.
 
