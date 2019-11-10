@@ -1,4 +1,5 @@
-Jeff Schmitz 2019 -
+Jeffery.Schmitz@mongodb.com
+2019 -
 
 MongoDB README
 
