@@ -1,5 +1,5 @@
 one to squillions example
-mongo
+> mongo
 > db.logmsg.findOne()
 {
     time : ISODate("2014-03-28T09:42:41.382Z"),
