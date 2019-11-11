@@ -7,6 +7,6 @@ req <- new_handle() %>%
    curl_fetch_memory(url = "http://IP address/getdataframe") 
 jsonlite::prettify(rawToChar(req$content))
 
-#jsonlite
+
  
 
