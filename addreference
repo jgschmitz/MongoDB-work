@@ -1,4 +1,4 @@
-mongo
+>mongo
 db.tasks.findOne()
 {
     _id: ObjectID("ADF9"), 
