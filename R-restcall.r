@@ -1,5 +1,6 @@
 df= data.frame("col1" = c(seq(1:10)), "col3"=c(seq(11:21)))
 mydf = toJSON(df)
+
  
 req <- new_handle() %>%
    handle_setopt("customrequest"="GET", postfields = mydf) %>%
