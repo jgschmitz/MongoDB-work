@@ -1,5 +1,5 @@
   #pull standard mongo - this is the smaller image
-  #
+  
   registry: docker.io
   #Bitnami MongoDB image name
   #
