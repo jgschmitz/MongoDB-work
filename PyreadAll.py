@@ -1,5 +1,5 @@
 python3
-
+# read all example
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
