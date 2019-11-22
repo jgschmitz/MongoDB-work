@@ -1,8 +1,8 @@
->mongo
+mongo
 db.person.findOne()
 {
     _id: ObjectID("AAF1"),
-    name: "Leah Pritchett",
+    name: "Erica Enders",
     tasks [     // array of references to Task documents
         ObjectID("ADF9"), 
         ObjectID("AE02"),
