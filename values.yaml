@@ -1,5 +1,4 @@
-#Docker image parameters latest revision
-#Please, note that this will override the image parameters, including dependencies, configured to use the global value
+#Docker image parameters latest revision****
 
 # global:
 #   imageRegistry: myRegistryName
