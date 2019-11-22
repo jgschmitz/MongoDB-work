@@ -1,4 +1,4 @@
->mongo
+mongo
 db.test.update(
         { a: 1 },
         [{ $set: 
