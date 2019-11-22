@@ -1,7 +1,7 @@
 python3
 
 from pymongo import MongoClient
-client = MongoClient('mongodb://dover:27017/')
+client = MongoClient('mongodb://darkstar:27017/')
 
 with client:
     
