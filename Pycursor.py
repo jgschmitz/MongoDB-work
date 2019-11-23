@@ -1,5 +1,3 @@
-python3
-
 from pymongo import MongoClient
 client = MongoClient('mongodb://darkstar:27017/')
 
@@ -20,3 +18,10 @@ with client:
     print(cars.next())    
 
     print(list(cars))
+
+
+
+
+
+
+
