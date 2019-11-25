@@ -43,7 +43,7 @@ With insert_many() method, we insert eight documents into the cars collection, w
 { "_id" : ObjectId("5b41eb21b9c5d915989d48a8"), "price" : 52642, "name" : "Audi" }
 { "_id" : ObjectId("5b41eb21b9c5d915989d48a9"), "price" : 57127, "name" : "Mercedes" }
 { "_id" : ObjectId("5b41eb21b9c5d915989d48aa"), "price" : 9000, "name" : "Skoda" }
-{ "_id" : ObjectId("5b41eb21b9c5d915989d48ab"), "price" : 29000, "name" : "Volvo" }
+{ "_id" : ObjectId("5b41eb21b9c5d915989d48ab"), "price" : 29000, "name" : "Subaru" }
 { "_id" : ObjectId("5b41eb21b9c5d915989d48ac"), "price" : 350000, "name" : "Bentley" }
 { "_id" : ObjectId("5b41eb21b9c5d915989d48ad"), "price" : 21000, "name" : "Citroen" }
 { "_id" : ObjectId("5b41eb21b9c5d915989d48ae"), "price" : 41400, "name" : "Saab" }
