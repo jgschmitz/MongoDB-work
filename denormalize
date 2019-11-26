@@ -1,4 +1,4 @@
-from mongo shell  mongoDb
+>mongo
 
 > db.products.findOne()
 {
