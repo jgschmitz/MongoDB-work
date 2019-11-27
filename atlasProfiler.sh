@@ -1,4 +1,4 @@
-****test script to run against Atlas so showcase the profiler capabilities in Atlas for slow queries trouble shooting
+*test script to run against Atlas so showcase the profiler capabilities in Atlas for slow queries trouble shooting
 /usr/bin/sh
 
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]
