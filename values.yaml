@@ -14,7 +14,7 @@ image:
   ##
   repository: mongodb/mongodb
   ## Bitnami MongoDB image tag
-  ## ref: https://hub.docker.com/r/bitnami/mongodb/tags/
+  ## ref: https://hub.docker.com/r/bitnami/mongodb/
   ##
   tag: 4.0.12-debian-9-r43
   ## Specify a imagePullPolicy
