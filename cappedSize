@@ -1,5 +1,5 @@
 #collection cap size using the mongoDB shell
-mongo
+>mongo
 db.<collection>.stats().maxSize
 e.g.
 db.oplog.rs.stats().maxSize
