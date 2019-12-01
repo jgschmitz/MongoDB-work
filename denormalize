@@ -1,3 +1,4 @@
+#Lets denormalize this mugg
 >mongo
 
 > db.products.findOne()
