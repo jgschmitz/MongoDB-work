@@ -1,7 +1,7 @@
 # For a replica set, include the replica set name and a seedlist of the members in the URI string; e.g.
 # uriString = 'mongodb://mongodb0.example.com:27017,mongodb1.example.com:27017/?replicaSet=myRepl'
 # For a sharded cluster, connect to the mongos instances; e.g.
-# uriString = 'mongodb://mongos0.example.com:27017,mongos1.example.com:27017/'
+# uriString = 'mongodb://mongos0.example.com:27018,mongos1.example.com:27017/'
 
 client = MongoClient(uriString)
 wc_majority = WriteConcern("majority", wtimeout=1000)
