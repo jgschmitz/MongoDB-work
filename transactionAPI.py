@@ -15,7 +15,7 @@ client.get_database(
 # Step 1: Define the callback that specifies the sequence of operations to perform inside the transactions.
 def callback(session):
     collection_one = session.client.mydb1.foo
-    collection_two = session.client.mydb2.bar
+    collection_two = session.client.mydb3.bar
 
     # Important:: You must pass the session to the operations.
     collection_one.insert_one({'abc': 1}, session=session)
