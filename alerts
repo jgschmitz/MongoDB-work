@@ -1,4 +1,4 @@
-#send alerts 
+#send alerts using curl
 curl -X POST -u "xxxx:xxxxxx" --digest 'https://cloud.mongodb.com/api/atlas/v1.0/groups/5cn520dca6f239768087f39e/alertConfigs?prety=true' -H "Content-Type: application/json" --data '
 {
      "eventTypeName" : "OUTSIDE_METRIC_THRESHOLD",
