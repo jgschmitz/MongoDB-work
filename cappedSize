@@ -1,4 +1,4 @@
-#collection cap size using the mongoDB shell
+collection cap size using the mongoDB shell
 >mongo
 db.<collection>.stats().maxSize
 e.g.
