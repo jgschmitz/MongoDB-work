@@ -1,4 +1,4 @@
-#one to squillions example - great for logging applications
+one to squillions example - great for logging applications
 > mongo
 > db.logmsg.findOne()
 {
