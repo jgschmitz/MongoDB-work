@@ -2,7 +2,7 @@ one to squillions example - great for logging apps
 > mongo
 > db.logmsg.findOne()
 {
-    time : ISODate("2014-03-28T09:42:41.382Z"),
+    time : ISODate("2014-03-28T09:42:43.382Z"),
     message : 'error not found!',
     ipaddr : '127.66.66.66',
     host: ObjectID('AAAB')
