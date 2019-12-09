@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/local/perl -w
 
 open(my $fh, '<', "$file_path") or return 0;
     while (my $line = <$fh>) {
