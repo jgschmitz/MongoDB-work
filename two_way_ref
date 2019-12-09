@@ -2,7 +2,7 @@
 db.person.findOne()
 {
     _id: ObjectID("AAF1"),
-    name: "Erica Enders",
+    name: "Leah Pritchett",
     tasks [     // array of references to Task documents
         ObjectID("ADF9"), 
         ObjectID("AE02"),
