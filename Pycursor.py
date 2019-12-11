@@ -5,7 +5,7 @@ client = MongoClient('mongodb://wavelet:27017/')
 
 with client:
     
-    db = client.testdb
+    db = client.carsdb
 
     cars = db.cars.find()
 
