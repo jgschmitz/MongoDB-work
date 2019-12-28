@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 use; strict
+use; list
 
 my @serchstra;
 my $ccount=1;
