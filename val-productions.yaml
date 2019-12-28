@@ -1,4 +1,4 @@
-  pull standard mongo image or power bitnami
+  pull standard mongo image or bitnami which is a smaller image
   
   registry: docker.io
   #Bitnami MongoDB image name
