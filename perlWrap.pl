@@ -3,7 +3,7 @@
 use strict;
 use Exporter;
 use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-use MongoDB;Scala
+use MongoDB;
 
 
 $VERSION     = 1.00;
