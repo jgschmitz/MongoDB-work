@@ -31,7 +31,7 @@ sub _set_connection {
 }
 
 sub get_database_names {
-    # Lists all databases on the mongo server
+    # Lists all databases on the mongo server system call
     my $self = shift;
     return  $self->{connection}->database_names;
 }
