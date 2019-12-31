@@ -1,7 +1,6 @@
 #!/usr/bin/perl -w;
 use strict;
 use Exporter;
-use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 use MongoDB;
 
 
