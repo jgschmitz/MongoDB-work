@@ -1,4 +1,4 @@
-#restAPI call using R and other 
+#restAPI call using R and other stuff
 
 df= data.frame("col1" = c(seq(1:10)), "col3"=c(seq(11:21)))
 mydf = toJSON(df)
