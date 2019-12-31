@@ -16,7 +16,7 @@ $VERSION     = 2.00;
 sub new {
     my ($class, $args) = @_;
     my $self = {
-        host     => $args->{host} || 'localhost',       
+        host     => $args->{host} || 'darkstar',       
         port     => $args->{port} || '27017',
         database => $args->{database} || '',
         connection => $class->_set_connection(),
