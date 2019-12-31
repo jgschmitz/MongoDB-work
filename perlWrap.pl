@@ -5,7 +5,7 @@ use Exporter;
 use MongoDB;
 
 
-$VERSION     = 2.00;
+$VERSION     = 3.00;
 @ISA         = qw(Exporter);
 @EXPORT      = qw();
 @EXPORT_OK   = qw();
