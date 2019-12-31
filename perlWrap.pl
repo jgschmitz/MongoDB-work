@@ -6,7 +6,7 @@ use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
 use MongoDB;
 
 
-$VERSION     = 1.00;
+$VERSION     = 2.00;
 @ISA         = qw(Exporter);
 @EXPORT      = qw();
 @EXPORT_OK   = qw();
