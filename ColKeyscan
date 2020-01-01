@@ -1,4 +1,4 @@
-# words keyscan the cops the fuzz
+# words keyscan the cops the fuzz 
 Collection keyscan using mtools with python
 
 >mlogfilter mongod.log --warning errors detected
