@@ -1,4 +1,4 @@
-# words 
+# words keyscan 
 Collection keyscan using mtools with python
 
 >mlogfilter mongod.log --warning errors detected
