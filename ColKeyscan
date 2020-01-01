@@ -1,4 +1,4 @@
-# words keyscan 
+# words keyscan the cops
 Collection keyscan using mtools with python
 
 >mlogfilter mongod.log --warning errors detected
