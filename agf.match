@@ -1,6 +1,6 @@
 mongo> db.orders.aggregate([
 
-$chip
+
 $bin
 $golf
 print "thats a whole lot of aggs"
