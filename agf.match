@@ -1,4 +1,7 @@
 mongo> db.orders.aggregate([
+$agg
+$chip
+$bin
    { $match: { status: "A" } },
    { $group: { _id: "$cust_id", total: { $sum: "$total" } } }
 ])
