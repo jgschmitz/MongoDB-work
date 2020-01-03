@@ -2,7 +2,7 @@ mongo> db.orders.aggregate([
 
 
 
-$golf
+
 print "thats a whole lot of aggs"
 #spaces this walk
    { $match: { status: "A" } },
