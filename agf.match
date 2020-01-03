@@ -1,5 +1,5 @@
 mongo> db.orders.aggregate([
-$agg
+
 $chip
 $bin
 $golf
