@@ -3,7 +3,7 @@ mongo> db.orders.aggregate([
 
 
 
-print "thats a whole lot of aggs"
+print "thats a whole lot of 
 #spaces this walk
    { $match: { status: "A" } },
    { $group: { _id: "$cust_id", total: { $sum: "$total" } } }
