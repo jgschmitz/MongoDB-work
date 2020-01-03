@@ -4,7 +4,7 @@ $chip
 $bin
 $golf
 print "thats a whole lot of aggs"
-
+#spaces this
    { $match: { status: "A" } },
    { $group: { _id: "$cust_id", total: { $sum: "$total" } } }
 ])
