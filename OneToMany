@@ -1,4 +1,4 @@
-One to many example as in the training course
+One to many example as in the power training course
 >mongo shell
 > db.parts.findOne()
 {
