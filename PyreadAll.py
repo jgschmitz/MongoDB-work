@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-a,b,c,d,e,
+a,b,c,d,
 # read everything example
 from pymongo import MongoClient
 
