@@ -1,6 +1,6 @@
 python3
 
-1,2,3,4,5
+1,2,3,4
 
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
