@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-1
 # read everything example
 from pymongo import MongoClient
 
