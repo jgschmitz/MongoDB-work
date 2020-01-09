@@ -2,7 +2,7 @@ python3
 
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
-1,2,3,4
+1,2,3
 with client:
     
     db = client.carsdb
