@@ -1,5 +1,5 @@
 python3
-print "1,2,
+print "1,
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
 
