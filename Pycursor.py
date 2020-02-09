@@ -1,5 +1,5 @@
 python3
-print 
+
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
 
