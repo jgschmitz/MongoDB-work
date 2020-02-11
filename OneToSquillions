@@ -1,4 +1,4 @@
-one to "squillions" example
+one to "squillions"
 
 > mongo
 > db.logmsg.findOne()
