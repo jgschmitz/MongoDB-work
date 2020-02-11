@@ -1,5 +1,3 @@
-one
-
 > mongo
 > db.logmsg.findOne()
 {
