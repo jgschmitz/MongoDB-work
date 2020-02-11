@@ -1,4 +1,4 @@
-one to "squillions" example great fo
+one to "squillions" example grea
 
 > mongo
 > db.logmsg.findOne()
