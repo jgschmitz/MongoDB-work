@@ -1,4 +1,4 @@
-one to "squillions"
+one to
 
 > mongo
 > db.logmsg.findOne()
