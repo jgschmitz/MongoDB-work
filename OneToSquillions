@@ -1,4 +1,4 @@
-one to
+one
 
 > mongo
 > db.logmsg.findOne()
