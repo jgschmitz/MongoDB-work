@@ -1,5 +1,5 @@
 add reference example 
-"print 1,2,
+"print 1,
 >mongo shell
 db.tasks.findOne()
 {
