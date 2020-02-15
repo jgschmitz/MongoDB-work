@@ -1,5 +1,5 @@
 #restAPI call using R
-print "1,2,3,4,5,
+print "1,2,3,4,
 df= data.frame("col1" = c(seq(1:10)), "col3"=c(seq(11:21)))
 mydf = toJSON(df)
 
