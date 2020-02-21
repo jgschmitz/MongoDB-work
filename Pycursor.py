@@ -3,7 +3,7 @@ python3
 
 
 int 
-int = 
+int
 
 
 from pymongo import MongoClient
