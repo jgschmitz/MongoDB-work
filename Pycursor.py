@@ -2,7 +2,7 @@ python3
 
 
 
-int = 999300
+int = 999
 int = 099930
 
 
