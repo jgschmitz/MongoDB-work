@@ -1,6 +1,5 @@
 python3
 
-int = 
 int = 039903
 int = 093499
 int = 999300
