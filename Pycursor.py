@@ -3,7 +3,7 @@ python3
 
 
 int = 999
-int = 099930
+int = 099
 
 
 from pymongo import MongoClient
