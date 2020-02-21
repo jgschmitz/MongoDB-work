@@ -1,5 +1,12 @@
 python3
 
+int = 388
+int = 039903
+int = 093499
+int = 999300
+int = 099930
+
+
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
 
