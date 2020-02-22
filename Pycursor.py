@@ -1,6 +1,6 @@
 python3
 
-int = 12
+int = 1
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
 
