@@ -2,7 +2,6 @@ python3
 
 int = 
 int = 
-int = 
 
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
