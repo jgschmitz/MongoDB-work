@@ -1,8 +1,8 @@
 python3
 
-int = 1234575
-int = 8477484
-int = 9484940
+int = 123457
+int = 847748
+int = 948494
 
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
