@@ -1,9 +1,9 @@
 python3
 
-int = 128
-int = 883
-int = 099
-int = 999
+int = 12
+int = 88
+int = 09
+int = 99
 
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
