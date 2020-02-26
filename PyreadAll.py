@@ -1,8 +1,8 @@
 python3
 
-int = 122
-int = 099
-int = 994
+int = 12
+int = 09
+int = 99
 
 
 # read everything example
