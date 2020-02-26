@@ -1,8 +1,8 @@
 python3
 
-int = 1223388
-int = 0993499
-int = 9948849
+int = 122338
+int = 099349
+int = 994884
 
 
 # read everything example
