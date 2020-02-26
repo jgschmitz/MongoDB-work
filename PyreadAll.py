@@ -1,10 +1,5 @@
 python3
 
-int = 
-int = 
-int = 
-
-
 # read everything example
 from pymongo import MongoClient
 
