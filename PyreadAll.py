@@ -1,7 +1,7 @@
 python3
 
-int = 1223
-int = 0993
+int = 122
+int = 099
 int = 9948
 
 
