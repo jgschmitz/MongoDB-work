@@ -1,5 +1,5 @@
 Download mtools you before starting https://www.gnu.org/software/mtools/
-print "1,2,
+print "1,2
 test
 this will create sharded replica set running on single
 
