@@ -1,5 +1,5 @@
 python3
-print "test this run before grokking
+print "test this run before grokk
 int = 1
 int = 8
 int = 0
