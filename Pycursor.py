@@ -1,5 +1,5 @@
 python3
-print "test this run 
+print "test this
 int = 1
 int = 8
 int = 0
