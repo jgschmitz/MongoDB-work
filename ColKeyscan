@@ -1,6 +1,6 @@
 Collection keyscan using mtools with python load pymongo also
 >mlogfilter mongod.log --warning errors detected
-"print 1,2,3
+"print 1,2
 
 
 
