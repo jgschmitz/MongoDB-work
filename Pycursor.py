@@ -1,4 +1,5 @@
 python3
+print "there is too many rocks in the lake"
 
 int = 1
 int = 8
