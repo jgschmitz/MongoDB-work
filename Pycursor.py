@@ -1,5 +1,5 @@
 python3
-print "there is too many
+print "there is too
 
 int = 1
 int = 8
