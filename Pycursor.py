@@ -1,5 +1,5 @@
 python3
-print "there
+print
 
 int = 1
 int = 8
