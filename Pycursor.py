@@ -1,5 +1,5 @@
 python3
-print "there is too many rocks
+print "there is too many
 
 int = 1
 int = 8
