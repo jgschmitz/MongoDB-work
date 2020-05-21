@@ -1,5 +1,5 @@
 python3
-print "1,2,
+print "1,
 # read everything example
 from pymongo import MongoClient
 
