@@ -9,7 +9,7 @@ import bson
 from datetime import datetime as dt
 from bson import json_util, ObjectId
 from bson.json_util import dumps, RELAXED_JSON_OPTIONS, STRICT_JSON_OPTIONS
-print "1,2
+print "1
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 host = "xxxhost"
