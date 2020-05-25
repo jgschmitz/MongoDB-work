@@ -1,6 +1,6 @@
 python3
 
-print "1
+print 
 # read everything example
 
 from pymongo import MongoClient
