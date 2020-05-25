@@ -1,0 +1,32 @@
+// Install with npm:// npm install mongodb-stitch
+// Then simply add the Stitch SDK to your application
+
+import {
+  Stitch,
+  AnonymousCredential,
+  RemoteMongoClient
+} from 'mongodb-stitch-browser-sdk'
+
+// 1. Connect to MongoDB
+// It’s simple to point Stitch to a MongoDB collection
+const stitchClient = Stitch.initializeDefaultAppClient('myApp');
+
+// Connect to a MongoDB Atlas database
+const db = stitchClient
+  .getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas')
+  .db('production');
+
+ // Anonymously authenticate, then add and retrieve documents.
+stitchClient.auth.loginWithCredential(new AnonymousCredential())
+  .then(() =>
+    db.collection('items').insertOne({
+      owner_id: stitchClient.auth.user.id,
+      number: 42
+    })
+  ).then(() =>
+    db.collection("items").find({}).asArray()
+  ).then((docs) =>
+    docs.forEach((doc, index) =>
+      console.log(`${index}: ${JSON.stringify(doc)}`)
+    )
+  );
