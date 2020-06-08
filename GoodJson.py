@@ -6,7 +6,7 @@ import json
 import mongoengine_goodjson as gj
 import bson
 
-print
+pr
 
 
 from datetime import datetime as dt
