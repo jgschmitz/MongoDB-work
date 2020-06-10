@@ -1,5 +1,5 @@
 One to many example as in the power training 
-print
+
 >mongo shell
 > db.parts.findOne()
 {
