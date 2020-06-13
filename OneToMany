@@ -1,6 +1,4 @@
 One to many example as in the power training 
-pr
-
 
 >mongo shell
 > db.parts.findOne()
