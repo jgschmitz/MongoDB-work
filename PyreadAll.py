@@ -1,7 +1,7 @@
 python3
 
 # read everything example
-print
+pr
 
 from pymongo import MongoClient
 
