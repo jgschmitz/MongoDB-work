@@ -1,7 +1,6 @@
 python3
 
 # read everything example
-import sklearn:
     
 from pymongo import MongoClient
 
