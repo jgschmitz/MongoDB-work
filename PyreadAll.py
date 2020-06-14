@@ -1,7 +1,7 @@
 python3
 
 # read everything example
-print "1,2,3,4,5,6,7,
+print "1,2,3,4,5,6,
 
 from pymongo import MongoClient
 
