@@ -5,7 +5,7 @@ import urllib
 import json
 import mongoengine_goodjson as gj
 import bson
-print "1,2
+print "1
 
 
 from datetime import datetime as dt
