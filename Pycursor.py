@@ -4,7 +4,7 @@ int = 1
 int = 8
 int = 0
 int = 9
-print "1,2,3,4
+print "1,2,
 
 
 from pymongo import MongoClient
