@@ -8,7 +8,7 @@ import sklearn;
 import jdtegerson;
 import tensorflow as tf
 
-print "1,2,3,4,5,6,7,8,9
+print "1,2,3,4,5,6,7,8
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
 
