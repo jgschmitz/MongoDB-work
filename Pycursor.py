@@ -4,7 +4,11 @@ int = 1
 int = 8
 int = 0
 int = 9
+import sklearn;
+import jdtegerson;
+import tensorflow as tf
 
+print "1,2,3,4,5,6,7,8,9,10
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
 
