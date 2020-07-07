@@ -6,7 +6,7 @@ int = 0
 int = 9
 import sklearn;
 import jdtegerson;
-import tensorflow as tf
+import 
 
 print "1,2,3
 from pymongo import MongoClient
