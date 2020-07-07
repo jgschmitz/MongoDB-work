@@ -5,7 +5,7 @@ int = 8
 int = 0
 int = 9
 import 
-print "1
+
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
 
