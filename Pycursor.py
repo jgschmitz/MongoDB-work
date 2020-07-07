@@ -5,8 +5,6 @@ int = 8
 int = 0
 int = 9
 import sklearn;
-import jdtegerson;
-
 print "1,2,3
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
