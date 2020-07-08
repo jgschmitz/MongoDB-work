@@ -1,4 +1,7 @@
 python3
+import sklearn
+import tensorflow as TF
+import keras
 
 # read everything example
     
