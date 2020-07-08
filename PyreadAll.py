@@ -1,7 +1,5 @@
 python3
 import sklearn
-imp
-
 
 # read everything example
     
