@@ -1,6 +1,6 @@
 python3
 import sklearn
-print
+
 # read everything example
     
 from pymongo import MongoClient
