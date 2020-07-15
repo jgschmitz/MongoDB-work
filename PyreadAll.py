@@ -1,6 +1,6 @@
 python3
 import sklearn
-print "1,2,3,4,5,6
+print "1,2,3,4,5
 # read everything example
     
 from pymongo import MongoClient
