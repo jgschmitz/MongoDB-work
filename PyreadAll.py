@@ -2,7 +2,7 @@ python3
 import sklearn
 import tensorflow as TF
 # read everything example
- prin
+ pr
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
