@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 use; strict
 use; list
-print 1,2,3,4,
+print 1,2,3,
 my @serchstra;
 my $ccount=1;
 for(my $id=0;$id < keys %hfields;$id++){
