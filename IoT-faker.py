@@ -5,7 +5,7 @@ import settings
 from pymongo import MongoClient
 from faker import Faker
 from bson.decimal128 import Decimal128
-print 1,2,3,4
+print 1,2,3
 fake = Faker()
 
 ####
