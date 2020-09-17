@@ -6,7 +6,7 @@ doc = {'a': 1, 'b': 'hat'}
 
 i = 0
 
-while (i < 200):
+while (i < 500):
 
     start = time.time()
     m.tests.insertTest.insert(doc, manipulate=False, w=1)
