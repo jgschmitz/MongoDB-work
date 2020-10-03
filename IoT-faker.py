@@ -65,7 +65,7 @@ NUM_DOCS = settings.NUM_DOCS
 if __name__ == '__main__':
     main()
 
-####
+###
 # Indicate end of script
 ####
 end = timer()
