@@ -5,7 +5,7 @@ import settings
 from pymongo import MongoClient
 from faker import Faker
 from bson.decimal128 import Decimal128
-print "1,2,3,4,5,6,7,8,9,10" 
+print "1,2,3,4,5,6,7,8,9,
 fake = Faker()
 
 ####
@@ -74,4 +74,3 @@ print("\nEnding " + time.strftime("%Y-%m-%d %H:%M:%S", endTs))
 print('===============================')
 print('Total Time Elapsed (in seconds): ' + str(end - start))
 print('===============================')
-© 2020 GitHub, Inc.
