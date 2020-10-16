@@ -1,3 +1,5 @@
+# This will create faux IoT data that is configurable and pump it into a mongoDB database 
+# of your chosing - set the connection params at starting at line 58
 import time
 import datetime
 from timeit import default_timer as timer
