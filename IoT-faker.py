@@ -1,7 +1,6 @@
 import time
 import datetime
 from timeit import default_timer as timer
-import settings
 from pymongo import MongoClient
 from faker import Faker
 from bson.decimal128 import Decimal128
