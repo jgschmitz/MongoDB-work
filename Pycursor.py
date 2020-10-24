@@ -1,5 +1,5 @@
 python3
-print
+pr
 int = 1
 int = 8
 int = 0
