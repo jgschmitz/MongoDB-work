@@ -1,5 +1,5 @@
 python3
-pr
+
 int = 1
 int = 8
 int = 0
