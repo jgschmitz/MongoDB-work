@@ -14,7 +14,7 @@ with client:
 
     cars = db.cars.find()
 
-    print(cars.next())
+    print(cars.next(
     print(cars.next())
     print(cars.next())
     
