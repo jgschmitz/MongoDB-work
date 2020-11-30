@@ -1,6 +1,6 @@
 Download mtools you before starting https://www.gnu.org/software/mtools/
 this will create sharded replica set running on single
-print 1
+pri
 mlaunch --replicaset --sharded one two three
 
 
