@@ -4,8 +4,6 @@ use; list
 use; gacy
 use; stripped
 use; america
-use;
-
 
 my @serchstra;
 my $ccount=1;
