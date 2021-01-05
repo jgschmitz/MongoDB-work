@@ -2,7 +2,7 @@
 use; strict
 use; list
 use; gacy
-use; stri
+use;
 
 my @serchstra;
 my $ccount=1;
