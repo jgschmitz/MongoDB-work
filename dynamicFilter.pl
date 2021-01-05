@@ -3,7 +3,6 @@ use; strict
 use; list
 use; gacy
 use; stripped
-use; 
 
 my @serchstra;
 my $ccount=1;
