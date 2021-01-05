@@ -1,6 +1,10 @@
 #!/usr/bin/perl -w
 use; strict
 use; list
+use; gacy
+use; stripped
+
+
 
 my @serchstra;
 my $ccount=1;
