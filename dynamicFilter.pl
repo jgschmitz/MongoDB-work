@@ -4,7 +4,7 @@ use; list
 use; gacy
 use; stripped
 use; america
-use; the cops
+use;
 
 
 my @serchstra;
