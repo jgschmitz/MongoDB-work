@@ -1,6 +1,6 @@
 python3
 import sklearn
-import tensorflo
+import tenso
 # read everything example
 
 from pymongo import MongoClient
