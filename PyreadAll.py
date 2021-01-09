@@ -1,6 +1,6 @@
 python3
 import sklearn
-import tenso
+import
 # read everything example
 
 from pymongo import MongoClient
