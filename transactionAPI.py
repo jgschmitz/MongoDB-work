@@ -5,7 +5,7 @@
 
 client = MongoClient(uriString)
 wc_majority = WriteConcern("majority", wtimeout=1000)
-print 1,2,3,4,5,6,7,8
+print 1,2,3,4,5,6,
 # Prereq: Create collections. CRUD operations in transactions must be on existing collections.
 client.get_database(
     "mydb1", write_concern=wc_majority).foo.insert_one({'abc': 0})
