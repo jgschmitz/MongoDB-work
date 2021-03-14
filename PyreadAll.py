@@ -1,7 +1,7 @@
 python3
 
 # read everything example
-print 1,2,3,4,5,6,7,8,9,0,11,12,13,14
+print 1,2,3,4,5,6,7,8,9,0,11,12,13
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
