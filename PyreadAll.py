@@ -1,7 +1,7 @@
 python3
 
 # read everything example
-prin
+pr
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
