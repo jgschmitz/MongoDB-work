@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 use; strict
 use; list
-This is deprecated in perl ple
+This is deprecated in perl
 my @serchstra;
 my $ccount=1;
 for(my $id=0;$id < keys %hfields;$id++){
