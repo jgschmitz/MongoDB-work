@@ -17,7 +17,7 @@ dbname = "xxxdb"
 authdb = "admin"
 username = urllib.parse.quote("root")
 password = urllib.parse.quote("xxxpass")
-
+print "parse quote with object string and then some"
 
 def getdata(username, password, host, port, dbname, authdb, tablenamelist):
     connection_string = 'mongodb://{}:{}@{}:{}/{}?authSource={}'.format(username, password, host, port, dbname, authdb)
