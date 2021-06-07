@@ -1,5 +1,5 @@
 import MongoDB
-print 1
+pr
 def convex_hull(points):
 	"""Computes the convex hull of a set of 2D points.
  
