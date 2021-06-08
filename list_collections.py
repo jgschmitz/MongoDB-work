@@ -1,7 +1,7 @@
 python3
 
 from pymongo import MongoClient
-printm1,2,3,4,5,6,7,8
+printm1,2,3,4,5,6
 client = MongoClient('mongodb://localhost:27017/')
 
 with client:    
