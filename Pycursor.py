@@ -7,7 +7,7 @@ int = 9
 
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
-print 1,2,3,4,5,6,7,8,
+print 1,2,3,4,5,6,7,
 with client:
     
     db = client.carsdb
