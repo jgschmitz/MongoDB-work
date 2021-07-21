@@ -1,0 +1,175 @@
+.aws_mongodb_variables:
+  variables:
+    ACCESS_KEY_ID: $AWS_MONGODB_ACCESS_KEY_ID
+    SECRET_ACCESS_KEY: $AWS_MONGODB_SECRET_ACCESS_KEY
+    AWS_ACCESS_KEY_ID : $AWS_MONGODB_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: $AWS_MONGODB_SECRET_ACCESS_KEY
+    INTEGRATION_TEST_DIR: $AWS_MONGODB_TEST_SUBDIR
+    SERVICE_NAME: $AWS_MONGODB_SERVICE
+    BUILD_DIR: $AWS_MONGODB_BUILD_SUBDIR
+    ENVIRONMENT: $AWS_MONGODB_ENVIRONMENT
+    APPLICATION_NAME: os-$AWS_MONGODB_SERVICE
+    LOCAL_IMAGE_TAG: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHA
+    AWS_IMAGE_TAG_BASE: $AWS_MONGODB_ACCOUNT_ID.dkr.ecr.$AWS_MONGODB_REGION.amazonaws.com/os-$AWS_MONGODB_SERVICE
+    S3_DATA_BUCKET: $AWS_MONGODB_S3_DATA_BUCKET
+    LEGALTAG_BASE_URL: $AWS_MONGODB_LEGALTAG_BASE_URL
+    SNS_TOPIC_NAME: $AWS_MONGODB_SNS_TOPIC_NAME
+    OTHER_RELEVANT_DATA_COUNTRIES: $AWS_MONGODB_OTHER_RELEVANT_DATA_COUNTRIES
+    LEGAL_TAG : $AWS_MONGODB_LEGAL_TAG
+    TENANT_NAME : $AWS_MONGODB_TENANT_NAME
+    PRIVATE_TENANT1: $AWS_MONGODB_DEFAULT_DATA_PARTITION_ID_TENANT1
+    PRIVATE_TENANT2: tenant2
+    SHARED_TENANT: $AWS_MONGODB_DEFAULT_DATA_PARTITION_ID_TENANT2
+    VENDOR: aws
+    STORAGE_URL: $AWS_MONGODB_STORAGE_URL
+    DOMAIN: $AWS_MONGODB_TESTING_DOMAIN
+    LEGAL_URL: $AWS_MONGODB_LEGAL_URL
+    AWS_COGNITO_CLIENT_ID: $AWS_MONGODB_COGNITO_CLIENT_ID
+    AWS_COGNITO_USER_POOL_ID: $AWS_MONGODB_COGNITO_USER_POOL_ID
+    AWS_COGNITO_AUTH_FLOW: $AWS_MONGODB_COGNITO_AUTH_FLOW
+    AWS_COGNITO_AUTH_PARAMS_PASSWORD: $AWS_MONGODB_COGNITO_AUTH_PARAMS_PASSWORD
+    AWS_COGNITO_AUTH_PARAMS_USER: $AWS_MONGODB_COGNITO_AUTH_PARAMS_USER
+    AWS_COGNITO_AUTH_PARAMS_USER_NO_ACCESS: $AWS_MONGODB_COGNITO_AUTH_PARAMS_USER_NO_ACCESS
+    AWS_ACCOUNT_ID: $AWS_MONGODB_ACCOUNT_ID
+    AWS_REGION: $AWS_MONGODB_REGION
+    DEPLOY_ENV: $AWS_MONGODB_DEPLOY_ENV
+    CACHE_CLUSTER_GROUP_ENDPOINT: $AWS_MONGODB_CACHE_CLUSTER_GROUP_ENDPOINT
+    CACHE_CLUSTER_GROUP_PORT: $AWS_MONGODB_CACHE_CLUSTER_GROUP_PORT
+    CACHE_CLUSTER_LEGALTAG_ENDPOINT: $AWS_MONGODB_CACHE_CLUSTER_LEGALTAG_ENDPOINT
+    CACHE_CLUSTER_LEGALTAG_PORT: $AWS_MONGODB_CACHE_CLUSTER_LEGALTAG_PORT
+    CACHE_CLUSTER_SCHEMA_ENDPOINT: $AWS_MONGODB_CACHE_CLUSTER_SCHEMA_ENDPOINT
+    CACHE_CLUSTER_SCHEMA_PORT: $AWS_MONGODB_CACHE_CLUSTER_SCHEMA_PORT
+    APPLICATION_PORT: $AWS_MONGODB_APPLICATION_PORT
+    HOST_URL: $AWS_MONGODB_LEGAL_URL
+    MY_TENANT: $AWS_MONGODB_TENANT_NAME
+    ENTITLEMENTS_TEST_TENANT: $AWS_MONGODB_ENTITLEMENTS_TEST_TENANT
+    AWS_S3_ENDPOINT: $AWS_MONGODB_S3_ENDPOINT
+    AWS_S3_REGION: $AWS_MONGODB_REGION
+    LOG_LEVEL: INFO
+    SKIP_HTTP_TESTS: $AWS_MONGODB_SKIP_HTTP_TESTS
+    S3_LEGAL_CONFIG_BUCKET: $AWS_MONGODB_S3_LEGAL_CONFIG_BUCKET
+    LEGAL_QUEUE: $AWS_MONGODB_LEGAL_QUEUE
+    TABLE_PREFIX: $AWS_MONGODB_TABLE_PREFIX
+    RESOURCE_PREFIX: $AWS_MONGODB_TABLE_PREFIX
+    DYNAMO_DB_REGION: $AWS_MONGODB_DYNAMO_DB_REGION
+    DYNAMO_DB_ENDPOINT: $AWS_MONGODB_DYNAMO_DB_ENDPOINT
+    DELIVERY_INT_TEST_BUCKET_NAME: $AWS_MONGODB_DELIVERY_INT_TEST_BUCKET_NAME
+    DEFAULT_DATA_PARTITION_ID_TENANT1: $AWS_MONGODB_DEFAULT_DATA_PARTITION_ID_TENANT1
+    DEFAULT_DATA_PARTITION_ID_TENANT2: $AWS_MONGODB_DEFAULT_DATA_PARTITION_ID_TENANT2
+    SEARCH_HOST: $AWS_MONGODB_SEARCH_HOST
+    STORAGE_HOST: $AWS_MONGODB_STORAGE_HOST
+    LEGAL_HOST: $AWS_MONGODB_LEGAL_HOST
+    DELIVERY_HOST: $AWS_MONGODB_DELIVERY_HOST
+    ENTITLEMENTS_DOMAIN: $AWS_MONGODB_ENTITLEMENTS_DOMAIN
+    ELASTIC_HOST: $AWS_MONGODB_ELASTIC_HOST
+    DEFAULT_ELASTIC_USER_NAME: es
+    DEFAULT_ELASTIC_PASSWORD: $AWS_MONGODB_REGION
+    ELASTIC_PORT: 443
+    INDEXER_HOST: $AWS_MONGODB_INDEXER_HOST
+    AWS_CLUSTER_NAME: $AWS_MONGODB_CLUSTER_NAME
+    ENTITLEMENTS_URL: $AWS_MONGODB_ENTITLEMENTS_URL
+    VIRTUAL_SERVICE_HOST_NAME: $AWS_MONGODB_API_GATEWAY_HOST
+    HOST: $AWS_MONGODB_API_GATEWAY_URL
+    PARTITION_BASE_URL: $AWS_MONGODB_API_GATEWAY_URL/ #needs trailing slash
+    WORKFLOW_HOST: $AWS_MONGODB_WORKFLOW_URL
+    INT_TEST_DAG_NAME: my_first_dag
+
+.aws_mongodb:
+  tags: ['osdu-medium']
+  image: $CI_REGISTRY/divido/aws-maven/aws-maven:v1.1
+  environment:
+    name: AWS
+  variables:
+    MAVEN_REPO_PATH: "$CI_PROJECT_DIR/.m2/repository"
+    MAVEN_CLI_OPTS: "--batch-mode --settings=$CI_PROJECT_DIR/.mvn/community-maven.settings.xml"
+  cache:
+    paths:
+      - $MAVEN_REPO_PATH
+  extends:
+    - .aws_mongodb_variables
+  before_script:
+    - unset AWS_ACCESS_KEY_ID
+    - unset AWS_SECRET_ACCESS_KEY
+    - mkdir -p ~/.aws
+    - |
+      cat > ~/.aws/credentials <<EOF
+      [default]
+      aws_access_key_id = $ACCESS_KEY_ID
+      aws_secret_access_key = $SECRET_ACCESS_KEY
+      EOF
+
+aws-mongodb-containerize:
+  extends: 
+    - .aws_mongodb
+    - .aws_mongodb_variables
+  stage: containerize
+  needs: ['compile-and-unit-test']
+  script:
+    - docker build  -f $BUILD_DIR/Dockerfile -t $LOCAL_IMAGE_TAG .
+    # Push to the local container registry
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker push $LOCAL_IMAGE_TAG
+    # Push to Amazon's container registry
+    - unset AWS_ACCESS_KEY_ID
+    - unset AWS_SECRET_ACCESS_KEY
+    - $(aws ecr get-login --no-include-email --region $AWS_REGION)
+    - docker tag $LOCAL_IMAGE_TAG $AWS_IMAGE_TAG_BASE:$CI_COMMIT_SHA
+    - docker tag $LOCAL_IMAGE_TAG $AWS_IMAGE_TAG_BASE:latest
+    - docker push $AWS_IMAGE_TAG_BASE:$CI_COMMIT_SHA
+    - docker push $AWS_IMAGE_TAG_BASE:latest
+  only:
+    variables:
+      - $AWS == 'true'
+  
+
+aws-mongodb-update-ecs:
+  extends: 
+    - .aws_mongodb
+    - .aws_mongodb_variables
+  stage: deploy
+  needs: ['aws-mongodb-containerize']
+  script:
+    - ECS_SERVICE_NAME=$(aws ssm get-parameter --name ecs-$SERVICE_NAME --query Parameter.Value  --output text --region $AWS_REGION)
+    - aws ecs update-service --cluster osdu-mongo-env-core-cluster --service $ECS_SERVICE_NAME --region $AWS_REGION --force-new-deployment
+  only:
+    variables:
+      - $AWS == 'true'
+
+aws-mongodb-test-java:
+  extends:
+    - .aws_mongodb
+    - .aws_mongodb_variables
+  stage: integration
+  needs: ['aws-mongodb-update-ecs']
+  script:
+    - ls -ltr
+    - cd $INTEGRATION_TEST_DIR
+    - mvn $MAVEN_CLI_OPTS -Dmaven.repo.local=$MAVEN_REPO_PATH ${AWS_MAVEN_TEST_COMMAND_OVERRIDE:-test} --update-snapshots -Dorg.slf4j.simpleLogger.defaultLogLevel=info
+  only:
+    variables:
+      - $AWS_MONGODB_SKIP_TESTS != 'true' && $AWS == 'true' && ($AWS_INT_TEST_TYPE == 'java' || $AWS_INT_TEST_TYPE == null) #Default if not defined
+  artifacts:
+    when: on_failure
+    paths:
+      - $INTEGRATION_TEST_DIR
+    expire_in: 1 week
+
+aws-mongodb-test-python:
+  extends:
+    - .aws_mongodb
+    - .aws_mongodb_variables
+  stage: integration
+  needs: ['aws-mongodb-update-ecs']
+  script:
+    - ls -ltr
+    - cd $INTEGRATION_TEST_DIR
+    - chmod +x ./run-integration-tests.sh
+    - ./run-integration-tests.sh
+  only:
+    variables:
+      - $AWS_MONGODB_SKIP_TESTS != 'true' && $AWS == 'true' && $AWS_INT_TEST_TYPE == 'python'
+  artifacts:
+    when: on_failure
+    paths:
+      - $INTEGRATION_TEST_DIR
+    expire_in: 1 week
