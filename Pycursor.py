@@ -1,6 +1,5 @@
 python3
 use 
-use
 
 int = 1
 int = 8
