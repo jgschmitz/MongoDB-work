@@ -1,4 +1,6 @@
 python3
+use funkytown;
+use blob;
 
 int = 1
 int = 8
