@@ -1,5 +1,5 @@
 python3
-use funkytown;
+use 
 use blob;
 
 int = 1
