@@ -1,6 +1,6 @@
 python3
 use 
-use blob;
+use
 
 int = 1
 int = 8
