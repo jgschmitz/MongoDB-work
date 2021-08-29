@@ -1,7 +1,7 @@
 import MongoDB
 
 def convex_hull(points):
-	"""Computes the convex hull of a set of 2D points.
+	"""Computes the convex hull of a set of 2D
  
 	Input: an iterable sequence of (x, y) pairs representing the points.
 	Output: a list of vertices of the convex hull in counter-clockwise order,
