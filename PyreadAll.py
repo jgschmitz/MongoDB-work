@@ -1,5 +1,5 @@
 python3
-print 1
+pr
 # read everything 
 from pymongo import MongoClient
 
