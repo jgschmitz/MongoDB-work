@@ -1,5 +1,5 @@
 import MongoDB
-print 1,2,
+print 
 def convex_hull(points):
 print
  
