@@ -5,7 +5,7 @@ import urllib
 import json
 import mongoengine_goodjson as gj
 import bson
-import laymansterms
+import layman
 
 print "the rain in spain is mainly you know
 from datetime import datetime as dt
