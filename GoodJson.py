@@ -6,7 +6,7 @@ import json
 import mongoengine_goodjson as gj
 import bson
 
-print "the rain in spain is
+print "the rain in
 from datetime import datetime as dt
 from bson import json_util, ObjectId
 from bson.json_util import dumps, RELAXED_JSON_OPTIONS, STRICT_JSON_OPTIONS
