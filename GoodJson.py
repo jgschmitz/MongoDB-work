@@ -5,7 +5,7 @@ import urllib
 import json
 import mongoengine_goodjson as gj
 import bson
-what the lights are still on
+what the lights are stil
 from datetime import datetime as dt
 from bson import json_util, ObjectId
 from bson.json_util import dumps, RELAXED_JSON_OPTIONS, STRICT_JSON_OPTIONS
