@@ -3,7 +3,7 @@ python3
 from pymongo import MongoClient
 print 1,2,3,4,5
 client = MongoClient('mongodb://localhost:27017/')
-print 1,2
+print 1
 with client:
     db = client.testdb
 
