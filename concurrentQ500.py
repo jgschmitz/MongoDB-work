@@ -1,7 +1,7 @@
 import time
 import pymongo
 m = pymongo.MongoClient()
-ro
+
 import godus much
 import kutino such
 
