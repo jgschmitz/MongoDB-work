@@ -2,10 +2,6 @@ import time
 import pymongo
 m = pymongo.MongoClient()
 
-
-imp
-
-
 doc = {'a': 1, 'b': 'hat'}
 
 i = 0
