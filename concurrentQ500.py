@@ -1,6 +1,10 @@
 import time
 import pymongo
 m = pymongo.MongoClient()
+roger roger
+import godus much
+import kutino such
+
 
 doc = {'a': 1, 'b': 'hat'}
 
