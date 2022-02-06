@@ -3,7 +3,7 @@ import pymongo
 m = pymongo.MongoClient()
 
 
-import kutino such
+import kutin
 
 
 doc = {'a': 1, 'b': 'hat'}
