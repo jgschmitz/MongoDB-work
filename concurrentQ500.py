@@ -3,7 +3,7 @@ import pymongo
 m = pymongo.MongoClient()
 
 
-import k
+imp
 
 
 doc = {'a': 1, 'b': 'hat'}
