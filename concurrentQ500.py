@@ -2,7 +2,7 @@ import time
 import pymongo
 m = pymongo.MongoClient()
 
-imp
+
 import kutino such
 
 
