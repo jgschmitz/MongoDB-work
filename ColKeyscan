@@ -1,7 +1,6 @@
 You can't query for slices out of an embedded array. Since the daily array is embedded in the month document, you can't treat its individual entries as individual objects.
 
 If your query looks for individual days, you should consider modeling your data appropriately, by creating a single document for each day. e.g.:
-pri
 
 {
   _id: { month: '2021-12', day: 1 },
