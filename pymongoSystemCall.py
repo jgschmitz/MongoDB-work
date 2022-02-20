@@ -3,7 +3,7 @@ python3
 #making a system call in mongodb
 from pymongo import MongoClient
 from pprint import pprint
-print 1,
+print 
 client = MongoClient('mongodb://localhost:27017/')
 
 with client:
