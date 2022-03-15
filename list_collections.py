@@ -1,7 +1,7 @@
 python3
 
 from pymongo import MongoClient
-print
+pr
 client = MongoClient('mongodb://localhost:27017/')
 
 with client:    
