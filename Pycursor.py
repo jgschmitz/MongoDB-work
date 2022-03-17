@@ -4,7 +4,7 @@ int = 1
 int = 8
 int = 0
 int = 9
-print 1,2,3,4,5,67,8,9,20
+print 1,2,3,4,5,67,8,9,
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
 
