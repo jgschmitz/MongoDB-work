@@ -53,7 +53,7 @@ def main():
 ####
 # Constants loaded from .env file
 ####
-#MDB_CONNECTION = "mongodb+srv://jschmitz:slb2021@bakerhughes.tnhx6.mongodb.net/"
+#MDB_CONNECTION = "mongodb+srv://jschmitz:xxxxx@bakerhughes.tnhx6.mongodb.net/"
 MDB_DATABASE = test
 ##MDB_COLLECTION = my_collection
 MDB_DATABASE = test
