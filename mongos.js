@@ -1,4 +1,5 @@
-commands bellow show how to run 3 shards instances and 3 config instances in your localhost. For each of these shards also are created 3 replica sets (mongod instances), may it can help you:
+commands bellow show how to run 3 shards instances and 3 config instances in your localhost. For each of these shards also are created 3 replica sets
+(mongod instances), Happy hacking
 
 clean everything up
 
