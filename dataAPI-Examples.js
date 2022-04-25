@@ -9,13 +9,13 @@ API KEY
 
 
 
-curl https://data.mongodb-api.com/app/data-amzuu/endpoint/data/beta/action/insertOne \
+curl https://data.mongodb-api.com/app/data-gvbow/endpoint/data/beta/action/insertOne \
 -H 'Content-Type: application/json'  \
--H 'api-key: 0vaT8d5Vh9cgvm3KdIQJWkl5M8alZgnoOczmApFlWVTMqisg24QWrUfMS0wkQ5Sj' \
+-H 'api-key: BbhcEUTGyXZI6w6IuuLoHifHhdTlzOfmJfzcgFtcwas4zEImky55H47tlDlVfQHa' \
 --data-raw \
 '{ 
-  "dataSource": "Cluster0", 
-  "database" : "household", 
+  "dataSource": "Google-Terraform", 
+  "database" : "Household", 
   "collection" : "pets", 
   "document" : { "name": "Harvest",
                  "breed": "Labrador",
@@ -23,9 +23,9 @@ curl https://data.mongodb-api.com/app/data-amzuu/endpoint/data/beta/action/inser
 }' 
 
 
-curl https://data.mongodb-api.com/app/data-amzuu/endpoint/data/beta/action/findOne \
+curl https://data.mongodb-api.com/app/data-gvbow/endpoint/data/beta/action/findOne \
 -H 'Content-Type: application/json'  \
--H 'api-key: 0vaT8d5Vh9cgvm3KdIQJWkl5M8alZgnoOczmApFlWVTMqisg24QWrUfMS0wkQ5Sj' \
+-H 'api-key: BbhcEUTGyXZI6w6IuuLoHifHhdTlzOfmJfzcgFtcwas4zEImky55H47tlDlVfQHa' \
 --data-raw \
 '{ 
   "dataSource": "Cluster0", 
@@ -43,7 +43,7 @@ https://tinyurl.com/atlasdapi
 
 curl  https://data.mongodb-api.com/app/data-amzuu/endpoint/data/beta/action/insertMany \
 -H 'Content-Type: application/json'  \
--H 'api-key: 0vaT8d5Vh9cgvm3KdIQJWkl5M8alZgnoOczmApFlWVTMqisg24QWrUfMS0wkQ5Sj' \
+-H 'api-key: BbhcEUTGyXZI6w6IuuLoHifHhdTlzOfmJfzcgFtcwas4zEImky55H47tlDlVfQHa' \
 --data-raw \
 '{
     "dataSource": "Cluster0",
@@ -66,7 +66,7 @@ curl  https://data.mongodb-api.com/app/data-amzuu/endpoint/data/beta/action/inse
 
 curl  https://data.mongodb-api.com/app/data-amzuu/endpoint/data/beta/action/find \
 -H 'Content-Type: application/json'  \
--H 'api-key: 0vaT8d5Vh9cgvm3KdIQJWkl5M8alZgnoOczmApFlWVTMqisg24QWrUfMS0wkQ5Sj' \
+-H 'api-key: BbhcEUTGyXZI6w6IuuLoHifHhdTlzOfmJfzcgFtcwas4zEImky55H47tlDlVfQHa' \
 --data-raw \
 '{
     "dataSource": "Cluster0", 
@@ -79,7 +79,7 @@ curl  https://data.mongodb-api.com/app/data-amzuu/endpoint/data/beta/action/find
 
 curl  https://data.mongodb-api.com/app/data-amzuu/endpoint/data/beta/action/updateOne \
 -H 'Content-Type: application/json'  \
--H 'api-key: 0vaT8d5Vh9cgvm3KdIQJWkl5M8alZgnoOczmApFlWVTMqisg24QWrUfMS0wkQ5Sj' \
+-H 'api-key: BbhcEUTGyXZI6w6IuuLoHifHhdTlzOfmJfzcgFtcwas4zEImky55H47tlDlVfQHa' \
 --data-raw \
 '{  
     "dataSource": "Cluster0",
