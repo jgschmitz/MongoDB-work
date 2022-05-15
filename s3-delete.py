@@ -1,5 +1,5 @@
 from datetime import datetime
-#clean up your S3 clut
+#clean up your S3
 from pymongo import MongoClient
 
 client = MongoClient('<YOUR-ATLAS-URI>')
