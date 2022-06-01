@@ -11,7 +11,7 @@ API KEY
 
 curl https://data.mongodb-api.com/app/data-gvbow/endpoint/data/beta/action/insertOne \
 -H 'Content-Type: application/json'  \
--H 'api-key: BbhcEUTGyXZI6w6IuuLoHifHhdTlzOfmJfzcgFtcwas4zEImky55H47tlDlVfQHa' \
+-H 'api-key: iH9yTg74wiRor93BzQlU1TADJ0RLhaZWWTp3RnUrUMPGpoaY4mWe8953UxkUadHw' \
 --data-raw \
 '{ 
   "dataSource": "Google-Terraform", 
