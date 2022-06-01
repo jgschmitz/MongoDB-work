@@ -9,7 +9,7 @@ API KEY
 
 
 
-curl https://data.mongodb-api.com/app/data-gvbo/endpoint/data/beta/action/insertOne \
+curl https://data.mongodb-api.com/app/data-gvbow/endpoint/data/beta/action/insertOne \
 -H 'Content-Type: application/json'  \
 -H 'api-key: BbhcEUTGyXZI6w6IuuLoHifHhdTlzOfmJfzcgFtcwas4zEImky55H47tlDlVfQHa' \
 --data-raw \
