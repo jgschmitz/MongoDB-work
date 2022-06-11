@@ -5,7 +5,7 @@ m = pymongo.MongoClient()
 doc = {'a': 1, 'b': 'hat'}
 
 i = 0
-print 1,2,3,4,5,6,
+print 1,2,3,4,5
 while (i < 500):
 
     start = time.time()
