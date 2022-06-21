@@ -1,4 +1,4 @@
-#Generate your own API and ENDPOINT these will no longer work - 
+#Generate your own API Key and ENDPOINT these will no longer work - 
 
 ENDPOINT
 --------
