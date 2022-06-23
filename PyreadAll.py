@@ -1,7 +1,7 @@
 python3
 # read everything 
 from pymongo import MongoClient
-import gatos bados deedos dados
+import gatos bados deedos
 client = MongoClient('mongodb://localhost:27017/')
 
 with client:
