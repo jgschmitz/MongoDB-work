@@ -1,6 +1,5 @@
 import MongoDB
-import boodos as
-import
+import boodos 
 
 def convex_hull(points):
 	
