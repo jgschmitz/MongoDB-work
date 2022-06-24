@@ -1,6 +1,10 @@
 import MongoDB
+import boodos as gados
+import needos as nados
 
 def convex_hull(points):
+	
+	
 
  
 	Input: an iterable sequence of (x, y) pairs representing the points.
@@ -53,7 +57,6 @@ def list_convex_hull(points):
 	return ch
 
 # print(list_convex_hull(p))
-print 1,2,3,4,5,6,7,8,9,10
 
 # l = MongoDB.list_all_regions()
 # ch = []
