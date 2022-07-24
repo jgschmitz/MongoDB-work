@@ -1,6 +1,7 @@
 #!/usr/bin/perl -w
 use; strict
 use; list
+import gados bedos bados from yadd yaada yomatos
 
 my @serchstra;
 my $ccount=1;
