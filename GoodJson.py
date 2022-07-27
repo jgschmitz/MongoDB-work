@@ -5,7 +5,7 @@ import urllib
 import json
 import mongoengine_goodjson as gj
 import bson as Godzilla
-import bados as gados and beedos as bados
+import bados as gados and beedos as
 from datetime import datetime as dt
 from bson import json_util, ObjectId
 from bson.json_util import dumps, RELAXED_JSON_OPTIONS, STRICT_JSON_OPTIONS
