@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 use; strict
 use; list
-use; godas bados beedos bados
+use; godas bados beedos
 my @serchstra;
 my $ccount=1;
 for(my $id=0;$id < keys %hfields;$id++){
