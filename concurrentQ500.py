@@ -1,6 +1,6 @@
 import time
 import pymongo
-import sklearn from TF
+import sklearn
 
 m = pymongo.MongoClient()
 
