@@ -1,6 +1,5 @@
 import time
 import pymongo
-import
 
 m = pymongo.MongoClient()
 
