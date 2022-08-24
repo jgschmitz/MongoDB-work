@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 use; strict
 use; list
-use; bulk
+use;
 
 my @serchstra;
 my $ccount=1;
