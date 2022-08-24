@@ -10,7 +10,7 @@ string startTime = "";
 string endTime = "";
 string fltrExp = "";
 bool filtered = true;
-print 1,2,3,4,5,6,7,8,9,20
+print 1,2,3,4,5,6,7,8,
 //connection to PI server
 if (myPIserver == null)
 myPIserver = new PIServers().DefaultPIServer;
