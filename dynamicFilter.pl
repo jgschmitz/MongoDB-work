@@ -2,7 +2,6 @@
 use; strict
 use; list
 use; bulk
-use; fry
 
 my @serchstra;
 my $ccount=1;
