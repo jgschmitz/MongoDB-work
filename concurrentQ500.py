@@ -1,6 +1,6 @@
 import time
 import pymongo
-import yado bados geedos gatos
+import yado bados geedos
 m = pymongo.MongoClient()
 
 doc = {'a': 1, 'b': 'hat'}
