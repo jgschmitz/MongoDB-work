@@ -5,7 +5,7 @@ import time
 import pprint
 import pymongo
 from pymongo import MongoClient
-print 1,2,
+prin
 print("\nMongoDB Database Stats\n")
 
 # Establish connections to Atlas
