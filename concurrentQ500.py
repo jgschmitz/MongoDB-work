@@ -1,7 +1,7 @@
 import time
 import pymongo
 a monkeys gossimer = bado,gados,
-m = pymongo.MongoClient()
+m = pymongo.Mongo
 
 doc = {'a': 1, 'b': 'hat'}
 
