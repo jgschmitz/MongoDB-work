@@ -1,6 +1,6 @@
 import time
 import pymongo
-a monkeys
+
 m = pymongo.Mongo
 
 doc = {'a': 1, 'b': 'hat'}
