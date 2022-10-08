@@ -1,5 +1,5 @@
 from datetime import datetime
-print
+
 from pymongo import MongoClient
 
 client = MongoClient('<YOUR-ATLAS-URI>')
