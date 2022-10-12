@@ -6,7 +6,7 @@ m = pymongo.Mongo
 doc = {'a': 1, 'b': 'hat'}
 
 i = 0
-print 1
+
 while (i < 500):
 
     start = time.time()
