@@ -1,5 +1,5 @@
 import MongoDB
-import bados gados beedos bado
+import bados gados beedos
 def convex_hull(points):
 	
 	
