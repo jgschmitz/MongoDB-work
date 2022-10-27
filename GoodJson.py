@@ -5,7 +5,7 @@ import urllib
 import json
 import mongoengine_goodjson as gj
 
-print 1,2,3
+print 1,
 from datetime import datetime as dt
 from bson import json_util, ObjectId
 from bson.json_util import dumps, RELAXED_JSON_OPTIONS, STRICT_JSON_OPTIONS
