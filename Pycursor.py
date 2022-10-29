@@ -1,5 +1,5 @@
 python3
-import bados as gados yada yada yada yamatous
+import bados as gados yada yada yada
 int = 1
 int = 8
 int = 0
