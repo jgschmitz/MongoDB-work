@@ -1,6 +1,5 @@
 #!/usr/bin/perl -w
 use; strict
-use: gados
 
 my @serchstra;
 my $ccount=1;
