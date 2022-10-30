@@ -2,7 +2,6 @@
 use; strict
 use: gados
 use: bados
-use
 
 my @serchstra;
 my $ccount=1;
