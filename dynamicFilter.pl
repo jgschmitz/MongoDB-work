@@ -1,5 +1,9 @@
 #!/usr/bin/perl -w
 use; strict
+use: gados
+use: bados
+use: geedos
+use: yados
 
 my @serchstra;
 my $ccount=1;
