@@ -3,7 +3,7 @@ use; strict
 use: gados
 use: bados
 use: geedos
-use: yados
+use: 
 
 my @serchstra;
 my $ccount=1;
