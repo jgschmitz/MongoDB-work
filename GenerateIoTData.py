@@ -14,8 +14,7 @@ MONGO_URI='mongodb+srv://USER:PASSWORD@ATLASCLUSTER/test?retryWrites=true'
 print 1,
 volatility = 1
 sensors = []
-gateways = []
-print
+gateways = []\
 
 def getvalue(old_value):
     change_percent = volatility * \
