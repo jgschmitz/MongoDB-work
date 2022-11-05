@@ -15,7 +15,7 @@ print 1,
 volatility = 1
 sensors = []
 gateways = []
-print 1,2,3,4,5,6
+print 1,2,3,4
 
 def getvalue(old_value):
     change_percent = volatility * \
