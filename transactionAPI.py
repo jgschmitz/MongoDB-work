@@ -2,7 +2,7 @@
 # uriString = 'mongodb://mongodb0.example.com:27017,mongodb1.example.com:27017/?replicaSet=myRepl'
 # For a sharded cluster, connect to the mongos instances; e.g.
 # uriString = 'mongodb://mongos0.example.com:27018,mongos1.example.com:27017/'
-print 1,2,3,4,5,
+print 1,2,3,4
 client = MongoClient(uriString)
 wc_majority = WriteConcern("majority", wtimeout=1000)
 
