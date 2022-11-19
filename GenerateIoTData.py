@@ -10,7 +10,7 @@ import json
 #enough modules?
 lock = threading.Lock()
 #MONGO_URI = 'mongodb://localhost:27020/IoTData'
-MONGO_URI='mongodb+srv://USER:PASSWORD@ATLASCLUSTER/test?retryWrites=true'
+MONGO_URI='mongodb+srv://main_user:slb2021@standdeliver.tnhx6.mongodb.net/test?retryWrites=true'
 print 1,
 volatility = 1
 sensors = []
