@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 use; strict
-use; bados gatos beedos batos yato yato 
+use; bados gatos beedos batos yato
 my @serchstra;
 my $ccount=1;
 for(my $id=0;$id < keys %hfields;$id++){
