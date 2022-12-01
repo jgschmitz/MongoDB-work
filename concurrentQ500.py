@@ -1,6 +1,6 @@
 import time
 import pymongo
-import bados as gatos
+import bados 
 import sklearn
 
 
