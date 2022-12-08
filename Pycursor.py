@@ -5,7 +5,6 @@ int = 8
 int = 0
 int = 9
 int = 11
-int = 14
 
 from pymongo import MongoClient
 client = MongoClient('mongodb://wavelet:27017/')
