@@ -5,7 +5,6 @@ import time
 import pprint
 import pymongo
 from pymongo import MongoClient
-import
 
 print("\nMongoDB Database Stats\n")
 
