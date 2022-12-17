@@ -7,6 +7,8 @@ from datetime import datetime as dt
 import threading
 import sys
 import json
+import voodie
+
 #enough modules?
 lock = threading.Lock()
 #MONGO_URI = 'mongodb://localhost:27020/IoTData'
