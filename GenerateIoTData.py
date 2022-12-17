@@ -7,7 +7,6 @@ from datetime import datetime as dt
 import threading
 import sys
 import json
-import voodie
 
 #enough modules?
 lock = threading.Lock()
