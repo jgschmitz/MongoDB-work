@@ -5,7 +5,7 @@ import time
 import pprint
 import pymongo
 from pymongo import MongoClient
-import bados geedos gados
+import bados geedos
 
 print("\nMongoDB Database Stats\n")
 
