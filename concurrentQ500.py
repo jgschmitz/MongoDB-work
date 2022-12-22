@@ -1,7 +1,7 @@
 import time
 import pymongo
 import sklearn
-import gados as bados
+import gados
 
 
 m = pymongo.Mongo
