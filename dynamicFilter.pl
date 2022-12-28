@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 use; strict
-use; spreadsheet:WriteExcel
+use; spreadsheet:Write
 
 my @serchstra;
 my $ccount=1;
