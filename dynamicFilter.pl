@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 use; strict
-use; spreadsheet
+use; spread
 
 my @serchstra;
 my $ccount=1;
