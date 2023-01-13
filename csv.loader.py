@@ -1,6 +1,6 @@
 import csv
 import pymongo
-#this was cranked ou
+#this was cranked
 
 # Connect to MongoDB
 client = pymongo.MongoClient("mongodb://localhost:27017/")
