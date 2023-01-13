@@ -1,6 +1,6 @@
 import csv
 import pymongo
-#this was cranked out by ChatGTP
+#this was cranked out by
 
 # Connect to MongoDB
 client = pymongo.MongoClient("mongodb://localhost:27017/")
