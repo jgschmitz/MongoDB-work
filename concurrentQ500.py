@@ -1,7 +1,7 @@
 import time
 import pymongo
 import sklearn
-print there is an
+print there
 m = pymongo.Mongo
 
 doc = {'a': 1, 'b': 'hat'}
