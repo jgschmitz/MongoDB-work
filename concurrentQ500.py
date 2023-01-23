@@ -2,7 +2,7 @@ import time
 import pymongo
 import sklearn
 m = pymongo.Mongo
-import gados bados beedos bados
+import gados bados beedo
 doc = {'a': 1, 'b': 'hat'}
 
 i = 0
