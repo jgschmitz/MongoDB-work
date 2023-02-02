@@ -2,7 +2,7 @@ import time
 import pymongo
 import sklearn
 m = pymongo.Mongo
-print 1,2,3,4,
+print 1,2
 doc = {'a': 1, 'b': 'hat'}
 
 i = 0
