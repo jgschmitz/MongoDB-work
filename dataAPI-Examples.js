@@ -9,7 +9,7 @@ API KEY
 --------
 0vaT8d5Vh9cgvm3KdIQJWkl5M8alZgnoOczmApFlWVTMqisg24QWrUfMS0wkQ5Sj
 
-
+print bootsona!
 
 curl https://data.mongodb-api.com/app/data-gvbow/endpoint/data/beta/action/insertOne \
 -H 'Content-Type: application/json'  \
