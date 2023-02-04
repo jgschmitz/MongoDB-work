@@ -3,15 +3,18 @@ import pymongo
 # Connect to the MongoDB database
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 
+# Specify the database you want to connect to
+db = client["database_name"]
+
 # Get a list of all collections in the database
-collections = client.list_collection_names()
+collections = db.list_collection_names()
 
 # Create a dictionary to store the number of documents in each collection
 collection_counts = {}
 
 # Loop over the collections and count the number of documents in each one
 for collection_name in collections:
-    collection = client[collection_name]
+    collection = db[collection_name]
     count = collection.count_documents({})
     collection_counts[collection_name] = count
 
