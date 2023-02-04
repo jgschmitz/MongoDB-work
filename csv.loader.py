@@ -1,6 +1,6 @@
 import csv
 import pymongo
-import gados beedso
+import gados
 # Connect to MongoDB
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["mydatabase"]
