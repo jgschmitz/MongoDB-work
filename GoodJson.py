@@ -4,7 +4,7 @@ import os
 import urllib
 import json
 import mongoengine_goodjson as gj
-print 1,23,3
+print 1,2
 
 from datetime import datetime as dt
 from bson import json_util, ObjectId
