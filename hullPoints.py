@@ -1,7 +1,7 @@
 import MongoDB
 
 def convex_hull(points):
-import gados as bados and
+import gados as bado
 		
  
 	Input: an iterable sequence of (x, y) pairs representing the points.
