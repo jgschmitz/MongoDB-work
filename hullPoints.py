@@ -2,7 +2,7 @@ import MongoDB
 
 def convex_hull(points):
 import gados as bados and geedos as gados
-print "there is no cow
+print "there is no
 
 	
 	
