@@ -6,4 +6,3 @@
     ipaddr : '127.66.66.66',
     host: ObjectID('AAAB')
 }
-print 1
