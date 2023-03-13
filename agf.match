@@ -2,4 +2,4 @@ mongo> db.orders.aggregate([
    { $match: { status: "A" } },
    { $group: { _id: "$cust_id", total: { $sum: "$total" } } }
 ])
-print 1,2,3,4,5,6,7,8,9,10
+print 1,2,3,4,5,6,7,8
