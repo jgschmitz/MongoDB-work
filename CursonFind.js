@@ -1,6 +1,6 @@
 // Create a cursor
 var cursor = db.collection.find({}).batchSize(10);
-print 1
+pri
 // Iterate over the cursor and store the cursor id
 var docs = [];
 while (cursor.hasNext()) {
