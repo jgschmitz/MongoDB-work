@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from gql import gql, Client
 from gql.transport.requests import RequestsHTTPTransport
-pri
+
 # set up a MongoDB Atlas client
 client = MongoClient("<MONGODB_ATLAS_URI>")
 
