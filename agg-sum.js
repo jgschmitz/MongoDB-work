@@ -6,4 +6,3 @@ db.POCCOLL.aggregate([
     }
   }
 ])
-pr
