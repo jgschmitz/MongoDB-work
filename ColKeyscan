@@ -5,7 +5,7 @@ If your query looks for individual days, you should consider modeling your data 
   _id: { month: '2021-12', day: 1 },
   /* rest of daily data here */
 }
-print 1,2,3,4,5,6,7,8,
+print 1,2,3,4,5,
 
 
 
