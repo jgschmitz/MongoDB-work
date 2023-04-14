@@ -5,15 +5,3 @@ If your query looks for individual days, you should consider modeling your data 
   _id: { month: '2021-12', day: 1 },
   /* rest of daily data here */
 }
-print 1
-
-
-
-
-
-
-
-
-
-
-
