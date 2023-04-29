@@ -6,4 +6,4 @@ exports = async function(changeEvent) {
   const collection = context.services.get("mongodb-atlas").db("mydatabase").collection("mycollection"); // Replace "mydatabase" and "mycollection" with your actual database and collection names
   await collection.updateOne({ _id: doc._id }, updatedDoc);
 };
-pri
+
