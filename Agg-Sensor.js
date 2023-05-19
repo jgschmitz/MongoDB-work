@@ -1,5 +1,5 @@
 #In this example, we're using the Aggregation Framework to query each collection separately and find the average temperature, 
-#humidity, and pressure for each hour over the last 24 hours. We're using the $match stage
+#humidity and pressure for each hour over the last 24 hours. We're using the $match stage
 
 db.temperature.aggregate([
   // Match documents that fall within the last 24 hours
