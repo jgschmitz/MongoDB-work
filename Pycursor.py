@@ -25,10 +25,3 @@ with client:
     print(cars.next())    
 
     print(list(cars))
-
-
-
-
-
-
-
