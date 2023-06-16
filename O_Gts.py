@@ -1,5 +1,6 @@
 from faker import Faker
 from pymongo import MongoClient
+from datetime import datetime
 
 # Connect to MongoDB Atlas
 try:
@@ -15,12 +16,13 @@ except Exception as e:
 fake = Faker()
 
 # Generate and insert oil well data
-num_records = 1000  # Number of oil well records to generate
+num_records = 100  # Number of oil well records to generate
 
 try:
     for _ in range(num_records):
         # Generate fake oil well data
         oil_well_data = {
+            'timestamp': datetime.utcnow().isoformat(),
             'name': fake.company(),
             'location': {
                 'lat': fake.latitude(),
