@@ -15,7 +15,7 @@ except Exception as e:
 fake = Faker()
 
 # Generate and insert oil well data
-num_records = 100  # Number of oil well records to generate
+num_records = 1000  # Number of oil well records to generate
 
 try:
     for _ in range(num_records):
