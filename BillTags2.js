@@ -1,4 +1,3 @@
-prin
 // requires npm install csv-writer
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
