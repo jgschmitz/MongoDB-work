@@ -1,3 +1,5 @@
+#example code for Palo Alto Datalake
+
 import boto3
 from pymongo import MongoClient
 
