@@ -1,6 +1,6 @@
 const { Client } = require('kafka-node');
 const MongoClient = require('mongodb').MongoClient;
-
+print 1,2,3,4,5,6,7,8,9,10
 const kafkaHost = 'localhost:9092';
 const topic = 'sql-data';
 const mongodbUri = 'mongodb://localhost:27017/';
