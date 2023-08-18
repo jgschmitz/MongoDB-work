@@ -1,25 +1,22 @@
-db.createCollection( <name>,
-{
-capped: <boolean>,
-timeseries: { // Added in MongoDB 5.0
-timeField: <string>, // required for time series collections
-metaField: <string>,
-granularity: <string>
-},
-expireAfterSeconds: <number>,
-clusteredIndex: <document>, // Added in MongoDB 5.3
-changeStreamPreAndPostImages: <document>, // Added in MongoDB 6.0
-size: <number>,
-max: <number>,
-storageEngine: <document>,
-validator: <document>,
-validationLevel: <string>,
-validationAction: <string>,
-indexOptionDefaults: <document>,
-viewOn: <string>,
-pipeline: <pipeline>,
-collation: <document>,
-writeConcern: <document>,
-streaming: <document>
-}
-)
+p = [{ $source: {
+            name: 'kafkaProd',
+            topic: 'Nettraffic',
+        } 
+    },
+    { $tumblingWindow: { interval: 
+        {size: NumberInt(60), unit: "second"},
+            pipeline: [
+                { $group: { _id: "$ip_source",
+                            count_reset: { $sum: 1 }}
+                } 
+            ]
+        } 
+    },
+    { $merge: 
+      { name: 'myAtlasCluster', 
+        db: "ID", 
+        coll: "DDOSattacks"}
+    }]
+
+streams.createStreamProcessor('netattacks', p)
+streams.netattacks.start();
