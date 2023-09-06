@@ -1,7 +1,7 @@
 db.collection.aggregate([
   {
     $search: {
-      index: "your_search_index", // Replace with your actual index name
+      index: "hasFix", // Replace with your actual index name
       compound: {
         must: [],
         filter: [
