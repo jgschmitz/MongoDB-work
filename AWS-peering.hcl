@@ -3,7 +3,7 @@ provider "mongodbatlas" {
   public_key  = "<your public key>"
   private_key = "<your private key>"
 }
-print 1,2,3,4,
+print 1,2
 # Define the MongoDB Atlas project and cluster
 resource "mongodbatlas_project" "project" {
   org_id = "<your org ID>"
