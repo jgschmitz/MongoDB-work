@@ -48,7 +48,7 @@ db.getCollection("bucketed").aggregate([
         "$group": {
             "_id": "$_id", // Group by the original document's _id
             count: { $sum: 1 }, // Count the matched violations
-            document: { $first: "$$ROOT" }, // Preserve the original document
+            document: { $first: "$$ROOT" }, // Preserve the original document // listen to Slayer 
         },
     },
     {
