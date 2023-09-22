@@ -4,7 +4,7 @@ import random
 import string
 
 # Replace with your MongoDB Atlas connection string
-mongo_uri = "mongodb+srv://<username>:<password>@clustername.mongodb.net/test"
+mongo_uri = "mongodb+srv://xxx:xxx@shared-demo.xhytd.mongodb.net/?retryWrites=true&w=majority"
 
 # Replace <username>, <password>, and clustername with your actual MongoDB Atlas credentials and cluster name
 client = pymongo.MongoClient(mongo_uri)
@@ -15,18 +15,17 @@ collection = db["your_collection_name"]
 num_documents = 100
 
 for _ in range(num_documents):
-    # Generate a workflow session ID (e.g., a random string)
-    workflow_session_id = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(10))
-
     # Get the current datetime
     current_datetime = datetime.datetime.now()
 
-    # Generate a random payload
-    payload = ''.join(random.choice(string.ascii_letters) for _ in range(50))
+    # Generate a random payload length between 1KB and 140KB
+    payload_length = random.randint(1024, 140 * 1024)
+
+    # Generate a random payload with the specified length
+    payload = ''.join(random.choice(string.ascii_letters) for _ in range(payload_length))
 
     # Create the MongoDB document
     document = {
-        "workflow_session_id": workflow_session_id,
         "datetime": current_datetime,
         "payload": payload,
     }
