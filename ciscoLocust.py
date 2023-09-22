@@ -120,13 +120,11 @@ class MetricsLocust(User):
                 # TODO modify how much you want to offset the increment by using the worker id
                 # BUILT USING MIMESIS 11.1.0
                 _SCHEMA = Schema(
-                    schema=lambda: {
-                      
+                    schema=lambda: {                      
                         "_id": _("random.generate_string", str_seq="abcdefg123456789", length=8)+"-"+_("random.generate_string", str_seq="abcdefg123456789", length=4),
     "datetime": _("datetime.datetime", start=2000, end=2023),
     "payload": _("random.generate_string", str_seq="abcdefghijklmnopqrstuvwxyz0123456789-#", length=_("numeric.integer_number", start=1000, end=140000))
-                    },
-                    
+                    },                    
                     iterations=self.bulk_size
                 )
         except Exception as e:
