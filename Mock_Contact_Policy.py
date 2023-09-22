@@ -2,6 +2,7 @@ import pymongo
 import datetime
 import random
 import string
+import uuid
 
 # Replace with your MongoDB Atlas connection string
 mongo_uri = "mongodb+srv://xxx:xxx@shared-demo.xhytd.mongodb.net/?retryWrites=true&w=majority"
@@ -15,6 +16,9 @@ collection = db["your_collection_name"]
 num_documents = 100
 
 for _ in range(num_documents):
+    # Generate a custom GUID string
+    custom_guid = str(uuid.uuid4())
+
     # Get the current datetime
     current_datetime = datetime.datetime.now()
 
@@ -24,8 +28,9 @@ for _ in range(num_documents):
     # Generate a random payload with the specified length
     payload = ''.join(random.choice(string.ascii_letters) for _ in range(payload_length))
 
-    # Create the MongoDB document
+    # Create the MongoDB document with the custom GUID as the _id field
     document = {
+        "_id": custom_guid,
         "datetime": current_datetime,
         "payload": payload,
     }
