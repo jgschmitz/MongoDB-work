@@ -25,7 +25,7 @@ async function runQuery() {
     const result = await db.collection('system.profile').countDocuments({
       ts: { $gte: start, $lte: end },
       op: 'query',
-      ns: 'Car_Data.Customer_Data',
+      ns: 'database_name.Collection_name',
       planSummary: 'COLLSCAN',
     });
 
