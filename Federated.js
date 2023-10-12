@@ -1,5 +1,5 @@
 # #this queries the movie database in Atlas (first tier) and also the data in federated storage - 
-print 1,2,3
+print
 db.Collection0.aggregate([
   {
     $match: {
