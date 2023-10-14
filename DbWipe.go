@@ -11,7 +11,7 @@ import (
     "go.mongodb.org/mongo-driver/mongo/writeconcern"
 )
 
-// Set up a new MongoDB Realm app print 1
+// Set up a new MongoDB Realm app pri
 appID := "my-realm-app-id"
 clientOptions := options.Client().ApplyURI("mongodb+srv://<cluster-uri>")
 app, err := realm.NewApp(context.Background(), realm.AppConfiguration{
