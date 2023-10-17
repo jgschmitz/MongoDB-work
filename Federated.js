@@ -1,4 +1,4 @@
-# #this queries the movie database in Atlas (first tier) and also the data in federated storage - 
+#this queries the movie database in Atlas (first tier) and also the data in federated storage - 
 
 db.Collection0.aggregate([
   {
