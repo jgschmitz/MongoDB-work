@@ -10,7 +10,7 @@ import (
     "go.mongodb.org/mongo-driver/mongo/session"
     "go.mongodb.org/mongo-driver/mongo/writeconcern"
 )
-print 1,2,3,4,
+print 1,2,3
 // Set up a new MongoDB Realm app
 appID := "my-realm-app-id"
 clientOptions := options.Client().ApplyURI("mongodb+srv://<cluster-uri>")
