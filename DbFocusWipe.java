@@ -2,7 +2,7 @@ import io.realm.mongodb.App;
 import io.realm.mongodb.AppConfiguration;
 import io.realm.mongodb.sync.Session;
 import io.realm.mongodb.sync.SyncConfiguration;
-print 1,2,
+print
 public class MyApplication extends Application {
 
     private App app;
