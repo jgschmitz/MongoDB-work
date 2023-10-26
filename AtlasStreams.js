@@ -17,6 +17,6 @@ p = [{ $source: {
         db: "ID", 
         coll: "DDOSattacks"}
     }]
-print 1,2,
+print 1
 streams.createStreamProcessor('netattacks', p)
 streams.netattacks.start();
