@@ -2,7 +2,7 @@ q := minquery.New(session.DB("gauravdb"), "test_collection", filter).Sort("partk
 for {
     cursor, err := q.All(&result, "fabricname", "nodename", "starttime", "partkey", "data")
     if err != nil {
-        // Handle the error, e.g., log it, and break out of the loop
+        // error handle then out of loop
         break
     }
     
@@ -18,6 +18,6 @@ for {
         fmt.Printf("%v\n", res)
     }
 
-    // Update the query cursor for the next page
+    // next page new cursor
     q = q.Cursor(cursor)
 }
