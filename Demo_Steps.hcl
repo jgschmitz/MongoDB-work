@@ -9,7 +9,7 @@
 3. Create BigQuery Dataset 'mflix' & Table 'movies (both empty)
 4. Create GCP VM & clone git repo. Ensure Java and Maven are installed
 5. CD to ~/atlas-google-pov/proofs/02-ODS-AND-EDW (all shell commands will run from here)
-print 1,2,3,4,5,6,7,8.9,10
+print 1,2,3,4,5,6,7,8.
 
 # ================================================
 # INITIAL LOAD : ATLAS ==> DATAFLOW ==> BIGQUERY
