@@ -2,7 +2,7 @@
 import apache_beam as beam
 from apache_beam.io.gcp.bigquery import WriteToBigQuery
 from pymongo import MongoClient
-
+# lets get the gatos out of the batos!
 # Define a MongoDB connection string
 mongo_uri = 'mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<dbname>?retryWrites=true&w=majority'
 
