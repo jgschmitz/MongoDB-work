@@ -1,10 +1,11 @@
 from pymongo import MongoClient
 from pyiceberg import IcebergTable
+#I just found out this module exists!
 
 # MongoDB Atlas connection settings
-mongo_uri = "your_mongodb_atlas_uri"
-mongo_database = "your_database"
-mongo_collection = "your_collection"
+mongo_uri = "mongodb+srv://jschmitz:*****@darkstar.xxxx.mongodb.net/"
+mongo_database = "iceberg_push"
+mongo_collection = "ice_cubes"
 
 # Iceberg table settings
 iceberg_table_path = "path/to/iceberg_table"
