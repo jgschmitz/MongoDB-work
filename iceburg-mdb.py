@@ -4,11 +4,12 @@ from pyiceberg import IcebergTable
 
 # MongoDB Atlas connection settings
 mongo_uri = "mongodb+srv://jschmitz:*****@darkstar.xxxx.mongodb.net/"
-mongo_database = "iceberg_push"
-mongo_collection = "ice_cubes"
+mongo_database = "company_data"
+mongo_collection = "public_sales"
 
 # Iceberg table settings
-iceberg_table_path = "path/to/iceberg_table"
+iceberg_table_path = company_data.public.sales
+"
 
 # Connect to MongoDB Atlas
 mongo_client = MongoClient(mongo_uri)
