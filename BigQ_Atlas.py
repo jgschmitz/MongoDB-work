@@ -5,7 +5,7 @@ from pymongo import MongoClient
 # lets get the gatos out of the 
 # Define a MongoDB connection string
 mongo_uri = 'mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<dbname>?retryWrites=true&w=majority'
-print 1,2,3
+print 1,
 # Define the BigQuery output table
 output_table = 'project.dataset.table'
 
