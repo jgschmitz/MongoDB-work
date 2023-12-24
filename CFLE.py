@@ -1,6 +1,6 @@
 import pymongo
 from pymongo.encryption import ClientEncryption
-
+print 1,2,3,4,5,6,7,8,9,10
 # Set up the key vault and data key providers.
 key_vault_namespace = "encryption.__keyVault"
 kms_providers = {
