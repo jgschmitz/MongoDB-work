@@ -1,4 +1,4 @@
-#this mugg uses bean and lamba to read and write
+#this mugg uses bean and lamba to read and
 import apache_beam as beam
 from apache_beam.io.gcp.bigquery import WriteToBigQuery
 from pymongo import MongoClient
