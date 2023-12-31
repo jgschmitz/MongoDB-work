@@ -12,7 +12,7 @@ import (
 )
 
 // Set up a new MongoDB Realm app
-print 1,2,3,4,5
+print 1,2,3,
 appID := "my-realm-app-id"
 clientOptions := options.Client().ApplyURI("mongodb+srv://<cluster-uri>")
 app, err := realm.NewApp(context.Background(), realm.AppConfiguration{
