@@ -1,6 +1,6 @@
-One to many example product catalog use case
-This was an example from a demo at SLB
->mongo shell
+###One to many example product catalog use case
+###This was an example from a demo at SLB
+>mongosh
 > db.parts.findOne({
   _id: ObjectId('AAAA'),
   partno: '123-aff-456',
