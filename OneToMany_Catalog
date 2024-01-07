@@ -1,0 +1,16 @@
+One to many example product catalog use case
+this was an example from a demo at SLB
+>mongo shell
+> db.parts.findOne({
+  _id: ObjectId('AAAA'),
+  partno: '123-aff-456',
+  name: '#4 grommet',
+  product: {
+    name: 'left-handed shifter',
+    catalog_number: 4332,
+    // other product details embedded here if they don't change often
+  },
+  qty: 94,
+  cost: NumberDecimal('0.94'),
+  price: NumberDecimal('3.99')
+});
