@@ -1,5 +1,5 @@
 One to many example product catalog use case
-
+this was an example from a demo at SLB
 >mongo shell
 > db.parts.findOne()
 {
