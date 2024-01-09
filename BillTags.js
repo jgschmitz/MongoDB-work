@@ -1,5 +1,5 @@
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-print
+
 exports = async function (org, apiPublicKey, apiPrivateKey) {
   const http_args = {
     "scheme": "https",
