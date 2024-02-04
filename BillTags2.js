@@ -1,6 +1,6 @@
 // requires npm install csv-writer
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-prin
+
 exports = async function (org, apiPublicKey, apiPrivateKey) {
     let labelMap = {};
 
