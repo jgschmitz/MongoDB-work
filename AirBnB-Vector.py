@@ -2,10 +2,10 @@ import pymongo
 import openai
 
 #Set up openai key
-openai.api_key = "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"
+openai.api_key = "openAI Key"
 
 # Connect to MongoDB
-client = pymongo.MongoClient('mongodb+srv://jschmitz:slb2021@darkstar.tnhx6.mongodb.net/?retryWrites=true&w=majority')
+client = pymongo.MongoClient('mongodb+srv://jschmitz:xxxxxxxxxxx@darkstar.tnhx6.mongodb.net/?retryWrites=true&w=majority')
 db = client['sample_airbnb']
 collection = db['listingsAndReviews']
 
