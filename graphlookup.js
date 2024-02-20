@@ -1,3 +1,4 @@
+// Fire up the mongosh and just paste these steps 
 // Insert some data
 db.product_categories.insertMany([
     {
