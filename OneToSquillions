@@ -1,5 +1,4 @@
 > mongosh
-
 > db.logmsg.findOne()
 {
     time : ISODate("2014-03-28T09:42:43.382Z"),
