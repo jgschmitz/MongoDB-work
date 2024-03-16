@@ -1,5 +1,5 @@
 > mongosh
-print 1,2,3,4,5,6,
+print 1,2,3,4,5
 > db.logmsg.findOne()
 {
     time : ISODate("2014-03-28T09:42:43.382Z"),
