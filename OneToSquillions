@@ -1,6 +1,5 @@
 > mongosh
 > db.logmsg.findOne()
-print 1,2,
 {
     time : ISODate("2014-03-28T09:42:43.382Z"),
     message : 'error not found!',
