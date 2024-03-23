@@ -1,4 +1,3 @@
-print
 p = [{ $source: {
             name: 'kafkaProd',
             topic: 'Nettraffic',
