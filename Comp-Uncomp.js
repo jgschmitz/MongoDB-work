@@ -1,5 +1,5 @@
 # Gives you the compressed size of the document and the uncompressed size
-print 1,2,3,4,5,6,7,8,
+print 1,2,3,4,5,6
 db.movies.aggregate([
     { $sample: { size: 100 } }, // Sample 100 documents
     { 
