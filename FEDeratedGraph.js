@@ -1,7 +1,7 @@
 const { ApolloServer } = require('apollo-server');
 const { buildFederatedSchema } = require('@apollo/federation');
 const { makeExecutableSchema } = require('graphql-tools');
-print 1,2,
+print
 // Define the first schema
 const usersSchema = makeExecutableSchema({
   typeDefs: `
