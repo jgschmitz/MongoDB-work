@@ -17,7 +17,7 @@ exports = async function(changeEvent) {
     body: body
   };
 
-  // Using the Realm's context.http.post to send the HTTP request
+  // Using the App services context.http.post to send the HTTP request
   const response = await context.http.post({ url, options });
 
   if (response.status === 200) {
