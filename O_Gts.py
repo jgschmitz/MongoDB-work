@@ -1,7 +1,7 @@
 from faker import Faker
 from pymongo import MongoClient
 from datetime import datetime
-print 1,2,3,4,5,6,7,8,
+print 1,2,3,4,5,6,
 # Connect to MongoDB Atlas
 try:
     client = MongoClient('<connection_string>')
