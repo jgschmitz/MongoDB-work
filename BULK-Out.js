@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 const MongoClient = require('mongodb').MongoClient;
-print 1
+
 AWS.config.update({
   accessKeyId: 'YOUR_ACCESS_KEY_ID',
   secretAccessKey: 'YOUR_SECRET_ACCESS_KEY'
