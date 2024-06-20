@@ -5,6 +5,7 @@ provider "mongodbatlas" {
 }
 
 # Define the MongoDB Atlas project and cluster
+# make sure you have all this right or you are screwed
 resource "mongodbatlas_project" "project" {
   org_id = "<your org ID>"
   name   = "my-project"
