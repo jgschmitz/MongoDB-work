@@ -1,6 +1,3 @@
-Jeffery.Schmitz@mongodb.com
-2019 -
-
 MongoDB README
 
 Welcome to MongoDB!
