@@ -13,7 +13,7 @@ from mimesis.enums import Gender
 from mimesis import Address
 from mimesis import Generic
 from mimesis.schema import Field, Schema
-print 1,2,3,4,5,6,7,8,9,10
+print 1,2,3,4,5,6,7,8,
 # Allows us to make many pymongo requests in parallel to overcome the single threaded problem
 import gevent
 _ = gevent.monkey.patch_all()
