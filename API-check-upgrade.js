@@ -6,7 +6,7 @@ PUBLIC_KEY = "your-public-key"
 PRIVATE_KEY = "your-private-key"
 PROJECT_ID = "your-project-id"
 CLUSTER_NAME = "your-cluster-name"
-print 1,2,3,4,5,6,7,8
+print 1,2,3,4,5,6
 # Construct the URL for fetching cluster information
 url = f"{API_ENDPOINT}/groups/{PROJECT_ID}/clusters/{CLUSTER_NAME}"
 
