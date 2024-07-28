@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import numpy as np
 from llamaindex import LlamaIndex
-print 1,2
+prin
 # Connect to MongoDB
 client = MongoClient("mongodb://Atlas Connection string goes here")
 db = client["your_database"]
