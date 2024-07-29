@@ -6,7 +6,6 @@ from pymongo import MongoClient
 mongo_uri = 'mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<dbname>?retryWrites=true&w=majority'
 # Define the BigQuery output table
 output_table = 'project.dataset.table'
-input_sc
 
 #I just defined that mugg in the same line aove 
 # Define the Dataflow pipeline
