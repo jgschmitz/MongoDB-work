@@ -7,7 +7,7 @@ mongo_uri = 'mongodb+srv://<username>:<password>@<cluster>.mongodb.net/<dbname>?
 # Define the BigQuery output table
 output_table = 'project.dataset.table'
 
-#I just defined
+#I just
 # Define the Dataflow pipeline
 def run():
     with beam.Pipeline() as p:
