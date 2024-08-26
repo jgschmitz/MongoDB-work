@@ -20,3 +20,17 @@ p = [{ $source: {
  
 streams.createStreamProcessor('netattacks', p)
 streams.netattacks.start();
+
+p = [{ $source: {
+            name: 'CiscoMatic',
+            topic: 'logs',
+
+ { $tumblingWindow: { interval: 
+        {size: NumberInt(60), unit: "minute"},
+            pipeline: [
+                { $group: { _id: "$bulk_rip",
+                            count_reset: { $sum: 1 }}
+                } 
+            ]
+        } 
+    },            
