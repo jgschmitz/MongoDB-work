@@ -14,7 +14,7 @@ from mimesis import Address
 from mimesis import Generic
 from mimesis.schema import Field, Schema
 
-# Allows us to make many pymongo requests in parallel to overcome the single threaded problem
+# Allows us to make many pymongo requests in parallel to overcome issues with single threading
 import gevent
 _ = gevent.monkey.patch_all()
 
