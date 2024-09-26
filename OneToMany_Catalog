@@ -7,7 +7,7 @@ db.authors.aggregate([
       as: "books"  // Output array
     }
   },
-  // Add filtering for relevant books (e.g., published books only)
+  // Filter and project relevant fields in one step
   {
     $project: {
       name: 1,
@@ -15,35 +15,32 @@ db.authors.aggregate([
         $filter: {
           input: "$books",
           as: "book",
-          cond: { $eq: ["$$book.isPublished", true] }  // Include only published books
+          cond: { $eq: ["$$book.isPublished", true] }  // Only include published books
         }
       }
     }
   },
-  // Further project only relevant fields in books
+  // Sort books by published year and ensure non-null book array
+  {
+    $addFields: {
+      books: {
+        $ifNull: [
+          { 
+            $sortArray: { input: "$books", sortBy: { publishedYear: -1 } } 
+          }, 
+          []
+        ]  // Sort books by published year and ensure empty array if no books
+      }
+    }
+  },
+  // Optionally project only relevant book fields
   {
     $project: {
       name: 1,
       books: {
         title: 1,
         genre: 1,
-        publishedYear: 1  // Include more relevant fields
-      }
-    }
-  },
-  // Optionally, sort the books by published year (descending)
-  {
-    $addFields: {
-      books: {
-        $sortArray: { input: "$books", sortBy: { publishedYear: -1 } }  // Sort books by latest first
-      }
-    }
-  },
-  // Optional stage: Handle authors with no books, by ensuring the books array is present even if empty
-  {
-    $addFields: {
-      books: {
-        $ifNull: ["$books", []]  // Ensure an empty array instead of null if no books
+        publishedYear: 1
       }
     }
   }
