@@ -1,4 +1,4 @@
-# Gives you the compressed size of the document and the uncompressed size
+## Gives you the compressed size of the document and the uncompressed size
 db.movies.aggregate([
     { $sample: { size: 100 } }, // Sample 100 documents
     { 
