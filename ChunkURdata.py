@@ -1,4 +1,4 @@
-#break up your dataset for easier training in 🤗
+#break up your dataset for easier training in 🤗 100 rows at a time
 from datasets import load_dataset
 
 # Load the dataset from Hugging Face
