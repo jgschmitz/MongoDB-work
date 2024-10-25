@@ -1,4 +1,4 @@
-# lets do some advanced processing with streams - 
+#  some advanced processing with streams - 
 
             p = [
     {
