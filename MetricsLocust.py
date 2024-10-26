@@ -1,4 +1,4 @@
-#version 2.0 of this cleaned up minor improvements - 
+#version 3.0 of this cleaned up minor improvements - 
 import pymongo
 from locust import User, events, task, constant, tag, between, runners
 import time
