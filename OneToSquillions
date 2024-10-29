@@ -1,8 +1,10 @@
-> mongosh
 > db.logmsg.findOne()
 {
-    time : ISODate("2014-03-28T09:42:43.382Z"),
-    message : 'error not found!',
-    ipaddr : '127.66.66.66',
-    host: ObjectID('AAAB')
+    timestamp: ISODate("2014-03-28T09:42:43.382Z"),
+    error_message: 'Error not found!',
+    source_ip: '127.66.66.66',
+    host_id: UUID('3b241101-e2bb-4255-8caf-4136c566a962'),
+    severity: 'error',
+    app_module: 'authentication',
+    error_code: 404
 }
