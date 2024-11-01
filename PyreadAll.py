@@ -1,5 +1,5 @@
 python3
-# read everything 
+# read everything from collection
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
