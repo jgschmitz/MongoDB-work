@@ -1,4 +1,4 @@
-// Create a cursor
+// Lets Create a cursor
 var cursor = db.collection.find({}).batchSize(10);
 
 // Iterate over the cursor and store the cursor id
