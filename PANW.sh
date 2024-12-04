@@ -11,15 +11,17 @@ curl -u "PUBLIC-KEY:PRIVATE-KEY" --digest \
              {
                "regionName": "US_EAST_1",
                "electableNodes": 2,
-               "priority": 7,  // Higher priority for nodes in this region
-               "readOnlyNodes": 1
+               "readOnlyNodes": 1,
+               "priority": 7
              },
              {
                "regionName": "US_WEST_2",
                "electableNodes": 1,
-               "priority": 5  // Lower priority for nodes here
+               "readOnlyNodes": 0,
+               "priority": 5
              }
            ]
          }
-       ]
+       ],
+       "acceptDataRisksAndForceReplicaSetReconfig": "2024-12-04T14:15:22Z"
      }'
