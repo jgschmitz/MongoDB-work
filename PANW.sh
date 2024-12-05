@@ -1,4 +1,4 @@
-#example for panw (reconfigure cluser via API)
+##example for panw (reconfigure cluser via API)
 curl -u "PUBLIC-KEY:PRIVATE-KEY" --digest \
      -X PATCH "https://cloud.mongodb.com/api/atlas/v1.0/groups/{PROJECT-ID}/clusters/{CLUSTER-NAME}" \
      --header "Content-Type: application/json" \
