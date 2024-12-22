@@ -1,3 +1,4 @@
+# Generate Sample IoT data using Pythons Faker module
 from faker import Faker
 from pymongo import MongoClient
 from datetime import datetime
