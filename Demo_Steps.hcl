@@ -1,4 +1,4 @@
-# Big Query -> MongoDB Demo - or Lab walkthrough 
+## Demo lab Big Query -> MongoDB Demo - 
 ================================================
 # ================================================
 # SETUP
