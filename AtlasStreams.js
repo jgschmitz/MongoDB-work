@@ -1,19 +1,21 @@
-#some advanced processing with streams - 
+#cleaner version 4.0
 
-            p = [
+// Define the pipeline for stream processing
+const pipeline = [
+    // 1. Source: Kafka topic 'Nettraffic'
     {
         $source: {
             name: 'kafkaProd',
             topic: 'Nettraffic',
-        } 
-    },
-    // 1. Filtering Specific Traffic
-    {
-        $match: { 
-            ip_source: { $nin: ["192.168.1.1", "10.0.0.1"] } 
         }
     },
-    // 2. Enriching Data with GeoIP Information
+    // 2. Filter specific traffic
+    {
+        $match: {
+            ip_source: { $nin: ["192.168.1.1", "10.0.0.1"] }
+        }
+    },
+    // 3. Enrich data with GeoIP information
     {
         $lookup: {
             from: "GeoIP",
@@ -22,13 +24,13 @@
             as: "geo_info"
         }
     },
-    // 3. Grouping by IP Source and Calculating Metrics
+    // 4. Group by IP source and calculate metrics (tumbling window)
     {
         $tumblingWindow: {
-            interval: {size: NumberInt(60), unit: "second"},
+            interval: { size: NumberInt(60), unit: "second" },
             pipeline: [
                 {
-                    $group: { 
+                    $group: {
                         _id: "$ip_source",
                         count_reset: { $sum: 1 },
                         avg_packet_size: { $avg: "$packet_size" },
@@ -39,13 +41,13 @@
             ]
         }
     },
-    // 4. Identifying Anomalies
+    // 5. Identify anomalies
     {
         $match: {
-            count_reset: { $gt: 1000 }  // Example threshold for anomaly detection
+            count_reset: { $gt: 1000 } // Threshold for anomaly detection
         }
     },
-    // 5. Adding Alert Field Based on Anomaly Detection
+    // 6. Add alert field based on anomaly detection
     {
         $project: {
             _id: 0,
@@ -54,20 +56,29 @@
             avg_packet_size: 1,
             max_packet_size: 1,
             min_packet_size: 1,
-            alert: { $cond: { if: { $gt: ["$count_reset", 1000] }, then: "ALERT", else: null } },
+            alert: {
+                $cond: {
+                    if: { $gt: ["$count_reset", 1000] },
+                    then: "ALERT",
+                    else: null
+                }
+            },
             geo_info: 1
         }
     },
-    // 6. Merging the Results into the MongoDB Collection
+    // 7. Merge results into the MongoDB collection
     {
         $merge: {
-            name: 'myAtlasCluster', 
-            db: "ID", 
-            coll: "DDOSattacks"
+            into: {
+                db: "ID",
+                coll: "DDOSattacks"
+            },
+            whenMatched: "merge", // Optional: Specify behavior for matching documents
+            whenNotMatched: "insert"
         }
     }
-]
+];
 
-// Creating and starting the stream processor
-streams.createStreamProcessor('netattacks', p);
+// Create and start the stream processor
+streams.createStreamProcessor('netattacks', pipeline);
 streams.netattacks.start();
