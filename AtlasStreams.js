@@ -6,7 +6,7 @@ const pipeline = [
     {
         $source: {
             name: 'kafkaProd',
-            topic: 'Nettraffic',
+            topic: 'Networktraffic',
         }
     },
     // 2. Filter specific traffic
