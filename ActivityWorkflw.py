@@ -1,4 +1,4 @@
-# Ironclad demo
+# Ironclad demo - live demo
 from temporalio import workflow, activity
 
 @workflow.defn
