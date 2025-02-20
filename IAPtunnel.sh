@@ -23,12 +23,13 @@ TUNNEL_PID=$!
 
 # Wait a few seconds for the tunnel to establish
 sleep 5
-echo "IAP tunnel established. Launching MongoDB Compass..."
+echo "IAP tunnel established."
 
-# Launch MongoDB Compass with the tunnel connection
-# Update the path if Compass is installed elsewhere
-COMPASS_PATH="/Applications/MongoDB Compass.app/Contents/MacOS/MongoDB Compass"
-"$COMPASS_PATH" "mongodb://localhost:$LOCAL_PORT"
+# Prompt the user to open Compass manually
+echo "Please open MongoDB Compass manually and connect to:"
+echo "mongodb://localhost:$LOCAL_PORT"
+echo "Press ENTER when you close Compass to shut down the tunnel."
+read -p ""
 
-# Once Compass closes, run cleanup
+# Cleanup when finished
 cleanup
