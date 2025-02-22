@@ -1,5 +1,3 @@
-#this queries the movie database in Atlas (first tier) and also the data in federated storage - 
-
 db.Collection0.aggregate([
   {
     $match: {
@@ -9,7 +7,7 @@ db.Collection0.aggregate([
   },
   {
     $lookup: {
-      from: "movies",
+      from: "federatedSource.movies",  // Target federated storage explicitly
       let: { title: "$name" },
       pipeline: [
         {
