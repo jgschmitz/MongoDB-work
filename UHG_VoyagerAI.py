@@ -3,7 +3,7 @@ from voyageai import Client  # Import the VoyageAI client
 
 # MongoDB connection - Database renamed to uhg_demo
 client = pymongo.MongoClient("mongodb+srv://jschmitz:xxx@xxx.xxxxx.mongodb.net/?retryWrites=true&w=majority")
-db = client.uhg_demo  # Changed database name
+db = client.uhg_demo  
 
 # Initialize VoyageAI client using your API key
 voyage_client = Client(api_key="ADD KEY HERE")
