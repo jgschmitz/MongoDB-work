@@ -1,3 +1,4 @@
+#This demo uses non-free tier keys 🔑
 import pymongo
 from voyageai import Client as VoyageClient
 import openai
