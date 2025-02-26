@@ -5,7 +5,7 @@ import openai
 
 # Initialize MongoDB connection
 client = pymongo.MongoClient("mongodb+srv://user:pwd@xxx.xxxx.mongodb.net/?retryWrites=true&w=majority")
-db = client.uhg_demo  # Using the previously created database
+db = client.uhg_demo  
 collection = db.vectors_demo_rag  # New collection for RAG pipeline
 
 # Initialize API clients
