@@ -4,7 +4,7 @@ from voyageai import Client as VoyageClient
 import openai
 
 # Initialize MongoDB connection
-client = pymongo.MongoClient("mongodb+srv://jschmitz:xxxx@xxx.xxxx.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://user:pwd@xxx.xxxx.mongodb.net/?retryWrites=true&w=majority")
 db = client.uhg_demo  # Using the previously created database
 collection = db.vectors_demo_rag  # New collection for RAG pipeline
 
