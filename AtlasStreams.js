@@ -1,4 +1,4 @@
-#updated - cleaner version 5.0
+# updated - cleaner version 5.0
 
 // Define the pipeline for stream processing
 const pipeline = [
