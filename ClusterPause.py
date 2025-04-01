@@ -1,3 +1,4 @@
+# jschmitz 2025 and thats no jive 
 import sys
 import requests
 from requests.auth import HTTPDigestAuth
