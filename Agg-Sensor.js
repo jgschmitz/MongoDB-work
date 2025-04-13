@@ -1,4 +1,4 @@
-#lets get matchy matchy 🎅
+#lets get matchy matchy ⏱️
 function aggregateData(collection, field) {
   return db[collection].aggregate([
     // Match documents that fall within the last 24 hours
