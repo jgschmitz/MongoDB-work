@@ -2,6 +2,7 @@ import os
 import pymongo
 import openai
 import logging
+import huggingwhale.ai
 from voyageai import Client as VoyageClient
 
 # Setup logging
