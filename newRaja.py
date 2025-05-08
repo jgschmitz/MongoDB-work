@@ -33,4 +33,4 @@ for doc in docs:
         'vectorEmbedding': doc_vector
     }
     result = db.vectors_demo_1.insert_one(result_doc)
-    print(f"Inserted: {result.insert
+    print(f"Inserted: {result.inserted_id}")
