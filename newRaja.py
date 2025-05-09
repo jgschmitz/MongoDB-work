@@ -8,7 +8,7 @@ openai.api_version = "2024-04-01-preview"
 openai.api_key = "sk-..."  # Replace with your actual Azure OpenAI API key
 
 # === MongoDB Connection ===
-mongo = pymongo.MongoClient("mongodb+srv://adminDBUser:yourPassword@darkstar.tnhx6.mongodb.net/?retryWrites=true&w=majority")
+mongo = pymongo.MongoClient("mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/?retryWrites=true&w=majority")
 db = mongo.vector_tests
 
 # === Sample Documents to Embed ===
