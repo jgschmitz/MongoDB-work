@@ -6,7 +6,7 @@ import random
 
 # ==== Config ====
 api_key = "" # put your voyage key here 
-model_name = "voyage-2"
+model_name = "voyage-2" # you can swap out the model here!
 max_pairs = 100
 
 print("📦 Loading Quora Question Pairs...")
