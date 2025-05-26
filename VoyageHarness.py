@@ -10,7 +10,7 @@ model_name = "voyage-2" # you can swap out the model here!
 max_pairs = 100
 
 print("📦 Loading Quora Question Pairs...")
-dataset = load_dataset("quora", split="train")
+dataset = load_dataset("quora", split="train") #plug in your own dataset if you wish
 
 # Filter for only matching (duplicate) question pairs
 positive_pairs = [
