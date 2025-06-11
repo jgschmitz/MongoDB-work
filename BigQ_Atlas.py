@@ -1,5 +1,5 @@
 # Big Query -> MonboDB sync -> use google template this is deprecated
-
+# template is here -> https://cloud.google.com/dataflow/docs/guides/templates/provided/bigquery-to-mongodb
 import apache_beam as beam
 from apache_beam.io.gcp.bigquery import WriteToBigQuery
 from pymongo import MongoClient
