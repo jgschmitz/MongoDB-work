@@ -1,4 +1,4 @@
-#this is deprecated ***
+#this is deprecated *** the feature is now available in Atlas 
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 exports = async function (org, apiPublicKey, apiPrivateKey) {
   const http_args = {
