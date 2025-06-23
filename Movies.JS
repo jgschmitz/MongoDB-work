@@ -1,4 +1,4 @@
-#shorted version 2.o
+#shortened version 3.o
 
 const { MongoClient } = require('mongodb');
 
