@@ -1,4 +1,5 @@
-#This was built for SLB no longer maintained 
+#This was built for SLB no longer maintained ***Realm is deprecated check out our friends at https://www.ditto.com/
+
 import (
     "context"
     "go.mongodb.org/mongo-driver/mongo"
