@@ -7,7 +7,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 # Initialize MongoDB connection
-client = pymongo.MongoClient("mongodb+srv://jschmitz:slb2021@darkstar.tnhx6.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("")
 db = client.uhg_demo  # Database
 collection = db.vectors_demo_rag  # Collection for lead qualification & customer support
 
