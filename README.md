@@ -42,25 +42,15 @@ $ sudo mkdir -p /data/db
 $ ./mongod
 Launch the shell:
 
-bash
-Copy
-Edit
+```
 $ ./mongo
 > help
 For more options:
+```
 
-bash
-Copy
-Edit
+```
 $ ./mongod --help
-🧭 Installing Compass
-Run the script to install Compass:
-
-bash
-Copy
-Edit
-$ ./install_compass
-This will download and install MongoDB Compass for your platform.
+```
 
 🔌 Drivers
 Find drivers for most languages: 
@@ -89,10 +79,7 @@ Free courses at:
 👉 MongoDB University
 
 📄 License
-MongoDB is free and open-source.
-
+MongoDB is free and open-source. (USE ATLAS!) 
 Releases before Oct 16, 2018: AGPL
-
 Releases after Oct 16, 2018: SSPL v1
-
 See individual source files for license details.
