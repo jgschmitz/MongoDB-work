@@ -72,12 +72,15 @@ Cloud Hosted (Atlas): https://www.mongodb.com/cloud/atlas
 
 📬 Community & Support
 MongoDB Users Google Group
+https://groups.google.com/g/mongodb-user?pli=1
 
 MongoDB Dev Google Group
+https://groups.google.com/g/mongodb-dev
 
 🎓 Learn MongoDB
 Free courses at:
 👉 MongoDB University
+https://learn.mongodb.com/
 
 📄 License
 MongoDB is free and open-source. (USE ATLAS!) 
