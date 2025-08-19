@@ -41,6 +41,7 @@ Start the server:
 $ sudo mkdir -p /data/db
 $ ./mongod
 Launch the shell:
+```
 
 ```
 $ ./mongo
