@@ -63,13 +63,13 @@ $ ./install_compass
 This will download and install MongoDB Compass for your platform.
 
 🔌 Drivers
-Find drivers for most languages:
-👉 MongoDB Drivers
+Find drivers for most languages: 
+👉 MongoDB Drivers https://www.mongodb.com/docs/drivers/
 Use the mongo shell for administrative tasks.
 
 🐞 Bug Reports
 Submit bugs here:
-👉 Submit Bug Reports
+👉 Submit Bug Reports -> https://github.com/mongodb/mongo/wiki/Submit-Bug-Reports
 
 📦 Packaging
 Use the package.py script in buildscripts/ to generate RPM or Debian packages.
