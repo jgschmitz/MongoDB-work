@@ -1,2 +1,0 @@
-#set port flag 
-mlaunch --replicaset --nodes 3 --port 30001
