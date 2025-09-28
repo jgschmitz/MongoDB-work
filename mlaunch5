@@ -1,4 +1,0 @@
-#blast out 5 node replica set with mtools
-#should give 1gb per instance wired tiger storage
-mlaunch --replicaset --nodes 7
-
