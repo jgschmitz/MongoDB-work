@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.org/schemas/benefit-plan.schema.json",
   "title": "Benefit Plan (Canonical)",
   "type": "object",
