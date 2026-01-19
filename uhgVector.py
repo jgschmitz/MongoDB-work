@@ -10,7 +10,7 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # MongoDB connection
-client = pymongo.MongoClient("mongodb+srv://xxx:xxxx@clustername.tnhx6.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("")
 db = client.vector_tests
 
 # Medical-related example questions
