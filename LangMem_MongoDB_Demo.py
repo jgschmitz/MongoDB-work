@@ -1,102 +1,118 @@
+!pip -q install -U langmem langchain-openai
 from datetime import datetime, timezone
-from pymongo import MongoClient, ASCENDING, DESCENDING
+import hashlib
 from langmem import create_memory_manager
 from langchain_openai import ChatOpenAI
 
-# ----- Mongo -----
-client = MongoClient("mongodb://localhost:27017")
-db = client["langmem_demo"]
-mem_col = db["memories"]
-
-# Helpful indexes
-mem_col.create_index([("user_id", ASCENDING), ("updated_at", DESCENDING)])
-mem_col.create_index([("user_id", ASCENDING), ("fingerprint", ASCENDING)], unique=True)
-
-def load_memories(user_id: str, limit: int = 12) -> list[dict]:
-    return list(
-        mem_col.find({"user_id": user_id}, {"_id": 0})
-               .sort("updated_at", DESCENDING)
-               .limit(limit)
-    )
-
-def format_memories_for_prompt(memories: list[dict]) -> str:
-    if not memories:
-        return "None yet."
-    lines = []
-    for m in memories[::-1]:  # oldest->newest for readability
-        lines.append(f"- {m['text']}")
-    return "\n".join(lines)
-
-# Simple stable key so we upsert rather than endlessly append duplicates.
-# (You can make this smarter later.)
-import hashlib
-def fingerprint(text: str) -> str:
-    return hashlib.sha256(text.strip().lower().encode("utf-8")).hexdigest()
-
-def upsert_memory(user_id: str, text: str):
-    now = datetime.now(timezone.utc)
-    fp = fingerprint(text)
-    mem_col.update_one(
-        {"user_id": user_id, "fingerprint": fp},
-        {"$set": {"user_id": user_id, "text": text, "updated_at": now}},
-        upsert=True,
-    )
-
-# ----- LangMem extractor -----
-# This returns a list of "ExtractedMemory" items; docs show you can access content as item[1]. :contentReference[oaicite:0]{index=0}
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
-manager = create_memory_manager(
-    llm,
-    instructions="Extract durable user preferences and stable facts. "
-                 "Avoid one-off requests and transient details."
+# -------- LLM --------
+llm = ChatOpenAI(
+    model="gpt-4o-mini",
+    temperature=0,
+    openai_api_key="" #add openAI key here
 )
 
-def extract_and_store(user_id: str, recent_messages: list[dict], existing_texts: list[str]):
-    # Existing needs to match the manager's expected structure; simplest is pass extracted memory tuples back in.
-    # We'll just pass strings as "existing" since unstructured memories are allowed. :contentReference[oaicite:1]{index=1}
-    extracted = manager.invoke({"messages": recent_messages, "existing": existing_texts})
+# -------- LangMem extractor --------
+manager = create_memory_manager(
+    llm,
+    instructions=(
+        "Extract durable user preferences and stable facts that will be useful later. "
+        "Avoid transient or one-off requests. "
+        "Write each memory as a short, standalone sentence."
+    )
+)
 
-    # extracted elements behave like tuples; content is at [1] per docs example. :contentReference[oaicite:2]{index=2}
+# -------- In-notebook memory store --------
+# Each item: {fingerprint, text, updated_at}
+MEMORY = []
+
+def _fp(text: str) -> str:
+    return hashlib.sha256(text.strip().lower().encode("utf-8")).hexdigest()
+
+def upsert_memory(text: str):
+    now = datetime.now(timezone.utc)
+    fp = _fp(text)
+    for m in MEMORY:
+        if m["fingerprint"] == fp:
+            m["text"] = text
+            m["updated_at"] = now
+            return
+    MEMORY.append({"fingerprint": fp, "text": text, "updated_at": now})
+
+def load_memories(limit: int = 12) -> list[str]:
+    return [
+        m["text"]
+        for m in sorted(MEMORY, key=lambda x: x["updated_at"], reverse=True)[:limit]
+    ]
+
+def format_memories(mem_texts: list[str]) -> str:
+    if not mem_texts:
+        return "None yet."
+    return "\n".join(f"- {t}" for t in reversed(mem_texts))
+
+def extract_and_store(recent_messages: list[dict]):
+    existing = load_memories(limit=50)
+    extracted = manager.invoke({"messages": recent_messages, "existing": existing})
+
     for item in extracted:
         content = item[1]
         if hasattr(content, "model_dump"):
-            text = str(content.model_dump())
+            d = content.model_dump()
+            text = d.get("content") or d.get("text") or str(d)
         else:
             text = str(content)
-        upsert_memory(user_id, text)
 
-def chat_turn(user_id: str, user_text: str, history: list[dict]) -> tuple[str, list[dict]]:
-    # 1) Retrieve (simple: last N)
-    memories = load_memories(user_id, limit=12)
-    memory_block = format_memories_for_prompt(memories)
+        text = text.strip()
+        if len(text) >= 6:
+            upsert_memory(text)
 
-    # 2) Ask model, injecting memory
+def chat(user_text: str, history: list[dict]) -> tuple[str, list[dict]]:
+    mems = load_memories(limit=12)
     system = (
         "You are a helpful assistant.\n\n"
         "User memories (may be relevant):\n"
-        f"{memory_block}\n"
+        f"{format_memories(mems)}\n"
     )
 
-    messages = [{"role": "system", "content": system}] + history + [{"role": "user", "content": user_text}]
+    messages = (
+        [{"role": "system", "content": system}]
+        + history
+        + [{"role": "user", "content": user_text}]
+    )
+
     resp = llm.invoke(messages).content
 
-    # 3) Persist new/updated memories (LangMem decides)
-    new_history = history + [{"role": "user", "content": user_text}, {"role": "assistant", "content": resp}]
-    existing_texts = [m["text"] for m in memories]
-    extract_and_store(user_id, recent_messages=new_history[-6:], existing_texts=existing_texts)
+    new_history = history + [
+        {"role": "user", "content": user_text},
+        {"role": "assistant", "content": resp},
+    ]
 
+    # Only extract from last few turns for speed
+    extract_and_store(new_history[-6:])
     return resp, new_history
 
-# ----- Demo -----
-user_id = "demo"
 history = []
 
-resp, history = chat_turn(user_id, "Hey I'm Sam. Keep answers short. Also I'm allergic to peanuts.", history)
-print(resp)
+print("Commands: mem | reset | exit\n")
 
-resp, history = chat_turn(user_id, "Suggest a snack idea.", history)
-print(resp)
+while True:
+    user_text = input("you> ").strip()
+    if not user_text:
+        continue
+    if user_text.lower() == "exit":
+        break
+    if user_text.lower() == "mem":
+        print("\n[MEMORY]")
+        for t in load_memories(limit=50)[::-1]:
+            print("-", t)
+        print()
+        continue
+    if user_text.lower() == "reset":
+        history = []
+        print("(history cleared, memory kept)\n")
+        continue
 
-print("\nStored memories:")
-for m in load_memories(user_id, limit=50)[::-1]:
-    print("-", m["text"])
+    resp, history = chat(user_text, history)
+    print("bot>", resp, "\n")
+
+
+
