@@ -1,4 +1,4 @@
-!pip -q install -U langmem langchain-openai
+!pip install -U langmem langchain-openai
 from datetime import datetime, timezone
 import hashlib
 from langmem import create_memory_manager
