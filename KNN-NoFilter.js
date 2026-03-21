@@ -1,3 +1,4 @@
+# deprecated way to paste the array - this is not recommended now - 
 db.embedded_movies.aggregate([
   {
     "$search": {
