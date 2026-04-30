@@ -9,6 +9,7 @@ One cleanup: in the HCO examples you have both:
 filter: [{ in: { path: "metaData.source_code", value: [..., "LNRS", ...] }}],
 mustNot: [{ equals: { path: "metaData.source_code", value: "LNRS" }}]
 </code>
+<br>
 
 That works logically, but it is contradictory-looking and may add avoidable work. Prefer removing LNRS from the in list if it should always be excluded.
 
@@ -30,11 +31,13 @@ For first/last name and nickname arrays, keeping them in should is also correct 
 
 Current HCP zip queries use:
 
+<code>
 wildcard: {
   path: "searchFields.zip",
   query: "19422*",
   allowAnalyzedField: true
 }
+</code>
 
 Because zip is already mapped as:
 
@@ -47,12 +50,14 @@ For performance, consider one of these instead:
 
 Best for exact 5-digit ZIPs:
 
+<code>
 {
   "equals": {
     "path": "searchFields.zip",
     "value": "19422"
   }
 }
+</code>
 
 Best for ZIP prefixes if values include ZIP+4:
 
