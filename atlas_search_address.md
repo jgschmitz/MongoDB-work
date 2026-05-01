@@ -1,7 +1,8 @@
 # Atlas Search Address
 OrgName Query Recommendation
 
-**Address autocomplete is not the scary part. Org-name fuzzy is.**
+Actually sharing the Elastic Query was actually super helpful 
+Im thinking org-name fuzzy might actually be the problem here instead of the auto complete stage - 
 
 The mapping confirms `searchFields.address` is correctly mapped as `autocomplete` with `edgeGram`, `minGrams: 3`, and `maxGrams: 12`; `orgName` is mapped as `string` with `lucene.standard`, plus a `keyword` multi-field; and `orgName_SOUNDEX` is a lowercase `token`.
 
