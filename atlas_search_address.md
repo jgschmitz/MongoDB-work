@@ -163,3 +163,60 @@ equals: {
 **Address:** mapping is valid; conversion from ES `match_phrase_prefix` to Atlas `autocomplete + tokenOrder: sequential` is reasonable. Clean up query array to string and keep validating relevance.
 
 **OrgName:** still the main hotspot. The explain plan supports the original concern: fuzzy text is producing a lot of candidate traversal and scoring. Reduce fuzzy breadth further, make exact/normalized matches first-class, and avoid using fuzzy org-name as a high-weight primary signal.
+
+Also add Text operator here is an example
+
+```js
+So one thing our search specialist is recommending is keep autocomplete, but add normal text + normalized exact fields
+
+db.getCollection("hco_fragment_resource_latest").createSearchIndexes([
+  {
+    name: "hco_fragment_resource_latest_idx_v2",
+    definition: {
+      mappings: {
+        dynamic: false,
+        fields: {
+          metaData: {
+            type: "document",
+            fields: {
+              source_code: {
+                type: "token",
+                normalizer: "lowercase"
+              }
+            }
+          },
+          searchFields: {
+            type: "document",
+            fields: {
+              address: {
+                type: "autocomplete",
+                minGrams: 3,
+                maxGrams: 12,
+                tokenization: "edgeGram",
+                multi: {
+                  text: {
+                    type: "string",
+                    analyzer: "lucene.standard"
+                  },
+                  keyword: {
+                    type: "string",
+                    analyzer: "lucene.keyword"
+                  }
+                }
+              },
+              address_normalized: {
+                type: "token",
+                normalizer: "lowercase"
+              },
+              zip: {
+                type: "token",
+                normalizer: "lowercase"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+])
+```
