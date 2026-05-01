@@ -1,4 +1,5 @@
-# Atlas Search Address and OrgName Query Recommendation
+# Atlas Search Address
+OrgName Query Recommendation
 
 **Address autocomplete is not the scary part. Org-name fuzzy is.**
 
