@@ -164,7 +164,8 @@ equals: {
 
 **OrgName:** still the main hotspot. The explain plan supports the original concern: fuzzy text is producing a lot of candidate traversal and scoring. Reduce fuzzy breadth further, make exact/normalized matches first-class, and avoid using fuzzy org-name as a high-weight primary signal.
 
-Also add Text operator here is an example
+Also add Text operator here is an example the sample they gave showed a full address being put into the search
+autocomplete is useful for partial matches
 
 ```js
 So one thing our search specialist is recommending is keep autocomplete, but add normal text + normalized exact fields
