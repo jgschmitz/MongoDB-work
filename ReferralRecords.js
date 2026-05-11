@@ -1,4 +1,4 @@
-db.trackItReferralRecords.aggregate([
+db.trackItReferralRecords.explain("executionStats").aggregate([
   {
     $match: {
       "providerDetails.referringProviderTIN": "752613493",
