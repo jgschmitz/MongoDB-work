@@ -463,8 +463,8 @@ This avoids moving unnecessary large arrays across the wire and reduces response
 
 Completed:
 
-- Loaded 25K randomized Unter contact documents.
-- Verified `unter.contacts` contains 25K documents.
+- Loaded 5 million + randomized Unter contact documents.
+- Verified `unter.contacts` contains 5 million + documents.
 - Created/used `driver_summary` for the driver summary workload.
 - Identified core benchmark indexes.
 - Verified Atlas/PyMongo connectivity after fixing Database Access and Network Access setup.
