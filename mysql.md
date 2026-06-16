@@ -96,7 +96,7 @@ Notes
 
 The JSON columns in application_config should become native embedded documents instead of strings.
 
-### dataSets
+### DataSets
 
 Source tables
 
