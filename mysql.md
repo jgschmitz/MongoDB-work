@@ -1,6 +1,6 @@
 # First Pass MongoDB Data Model
 
-This is a first pass MongoDB data model based on the provided MySQL dump. It is intentionally pragmatic and should be treated as a starting point for review with the application team.
+This is a first pass MongoDB data model based on the provided MySQL dump. It is a first pass and should be treated as a starting point for review with the application team.
 
 The main assumption is that the current MySQL schema was created around application specific tables and workflow processing tables. The MongoDB model below tries to reduce duplicate table families, keep high write event data separate, and use embedded documents where the relationship appears to be one to one or configuration oriented.
 
