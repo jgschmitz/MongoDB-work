@@ -397,7 +397,7 @@ Before enabling production writes, validate:
 
 ---
 
-## Recommended Answer to CP3
+## Recommendation 
 
 The MongoDB Kafka Connector can be used as the supported sink into MongoDB Atlas, but the CP3-specific customization should be implemented before the sink connector receives the message.
 
