@@ -1,3 +1,4 @@
+# embedder for airbnb demo 
 import pymongo
 import openai
 
