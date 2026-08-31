@@ -768,7 +768,7 @@ Then execute the demo sequence:
 
 ---
 
-# Recommended TFW Talk Track
+# DEMO WALKTHROUGH
 
 ### Step 1 — Source variability
 
