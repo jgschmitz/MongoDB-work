@@ -1,4 +1,4 @@
-# UHG RATE Automation — Multidimensional Pricing Demo
+# UHG RATE Automation  Multidimensional Pricing Demo
 
 > **Purpose:** Demonstrate how MongoDB Atlas can provide a flexible analytical layer across heterogeneous fee sources, enabling multidimensional pricing analysis, comparison, and outlier detection without replacing the existing relational transactional workflow.
 
