@@ -1,81 +1,197 @@
 import subprocess
-import re
-from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure, OperationFailure
+import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Function to run Nmap and detect MongoDB instances
+from pymongo import MongoClient
+from pymongo.errors import (
+    ConnectionFailure,
+    OperationFailure,
+    ServerSelectionTimeoutError,
+)
+
+
+MONGODB_PORT = 27017
+TIMEOUT_MS = 3000
+MAX_WORKERS = 16
+
+
 def run_nmap_scan(subnet):
-    print(f"[+] Running Nmap scan on {subnet}...")
+    """
+    Scan a subnet for hosts with MongoDB's default port open.
+
+    Uses Nmap XML output instead of scraping human-readable text.
+    """
+    print(f"[+] Scanning {subnet} for MongoDB instances...")
+
+    command = [
+        "nmap",
+        "-n",
+        "-p", str(MONGODB_PORT),
+        "--open",
+        "-oX", "-",
+        subnet,
+    ]
+
     try:
         result = subprocess.run(
-            ["nmap", "-p", "27017", "--open", subnet],
+            command,
             capture_output=True,
-            text=True
+            text=True,
+            check=True,
         )
-        # Regex to extract IP addresses with port 27017 open
-        ips = re.findall(r"(\d+\.\d+\.\d+\.\d+)", result.stdout)
-        hosts = [f'mongodb://{ip}:27017' for ip in set(ips)]
-        print(f"[+] Found MongoDB instances: {hosts}")
+
+        root = ET.fromstring(result.stdout)
+        hosts = []
+
+        for host in root.findall("host"):
+            address = host.find("address")
+
+            if address is None:
+                continue
+
+            ip = address.get("addr")
+
+            for port in host.findall("./ports/port"):
+                state = port.find("state")
+
+                if (
+                    port.get("portid") == str(MONGODB_PORT)
+                    and state is not None
+                    and state.get("state") == "open"
+                ):
+                    hosts.append(f"mongodb://{ip}:{MONGODB_PORT}")
+
+        hosts = sorted(set(hosts))
+
+        print(f"[+] Found {len(hosts)} candidate MongoDB host(s)")
         return hosts
-    except Exception as e:
-        print(f"[-] Error running Nmap scan: {e}")
-        return []
 
-# Function to check for enterprise-only features
-def check_mongodb_features(uri):
+    except FileNotFoundError:
+        print("[-] Nmap is not installed or not in PATH.")
+    except subprocess.CalledProcessError as exc:
+        print(f"[-] Nmap failed: {exc.stderr.strip()}")
+    except ET.ParseError as exc:
+        print(f"[-] Could not parse Nmap output: {exc}")
+
+    return []
+
+
+def detect_topology(hello):
+    if hello.get("msg") == "isdbgrid":
+        return "mongos"
+
+    if hello.get("setName"):
+        return f"Replica Set ({hello['setName']})"
+
+    return "Standalone"
+
+
+def inspect_mongodb(uri):
+    result = {
+        "uri": uri,
+        "edition": "Unknown",
+        "version": "Unknown",
+        "topology": "Unknown",
+        "modules": [],
+        "error": None,
+    }
+
+    client = None
+
     try:
-        client = MongoClient(uri, serverSelectionTimeoutMS=3000)
-        client.server_info()  # Force connection to check if host is reachable
-        
-        db = client.admin
-        
-        # Attempt to detect LDAP/Kerberos (Enterprise-only features)
-        auth_mechanisms = db.command({'getParameter': 1, 'authenticationMechanisms': 1})
-        has_ldap = any(mech in auth_mechanisms.get('authenticationMechanisms', []) for mech in ['PLAIN', 'GSSAPI'])
-        
-        # Attempt to detect auditing
-        try:
-            audit_log = db.command({'getParameter': 1, 'auditLog': 1})
-            has_audit = 'auditLog' in audit_log
-        except OperationFailure:
-            has_audit = False
-        
-        # Attempt to detect encryption at rest (Enterprise-only feature)
-        try:
-            encryption_info = db.command({'getParameter': 1, 'encryptionAtRestMode': 1})
-            has_encryption = encryption_info.get('encryptionAtRestMode', None) is not None
-        except OperationFailure:
-            has_encryption = False
-        
-        # Infer edition
-        if has_ldap or has_audit or has_encryption:
-            edition = 'Likely Enterprise Edition'
-        else:
-            edition = 'Likely Community Edition'
-        
-        print(f"[+] {uri}: {edition}")
-        print(f"    LDAP: {has_ldap}, Audit: {has_audit}, Encryption: {has_encryption}")
-    except ConnectionFailure:
-        print(f"[-] Could not connect to {uri}")
-    except OperationFailure as e:
-        print(f"[-] Operation failed on {uri}: {e}")
-    except Exception as e:
-        print(f"[-] Unexpected error on {uri}: {e}")
+        client = MongoClient(
+            uri,
+            serverSelectionTimeoutMS=TIMEOUT_MS,
+            connectTimeoutMS=TIMEOUT_MS,
+            socketTimeoutMS=TIMEOUT_MS,
+            directConnection=True,
+        )
 
-# Main execution logic
+        admin = client.admin
+
+        # Confirm MongoDB and determine topology
+        hello = admin.command("hello")
+        result["topology"] = detect_topology(hello)
+
+        # Direct edition detection
+        build_info = admin.command("buildInfo")
+
+        result["version"] = build_info.get("version", "Unknown")
+        result["modules"] = build_info.get("modules", [])
+
+        if "enterprise" in result["modules"]:
+            result["edition"] = "MongoDB Enterprise"
+        else:
+            result["edition"] = "MongoDB Community"
+
+    except OperationFailure as exc:
+        if exc.code == 13:
+            result["edition"] = "Unknown (authentication required)"
+            result["error"] = "Authorization required"
+        else:
+            result["error"] = str(exc)
+
+    except (
+        ConnectionFailure,
+        ServerSelectionTimeoutError,
+    ) as exc:
+        result["error"] = f"Connection failed: {exc}"
+
+    except Exception as exc:
+        result["error"] = str(exc)
+
+    finally:
+        if client:
+            client.close()
+
+    return result
+
+
+def print_result(result):
+    print()
+    print(f"Host:     {result['uri']}")
+    print(f"Edition:  {result['edition']}")
+    print(f"Version:  {result['version']}")
+    print(f"Topology: {result['topology']}")
+
+    if result["modules"]:
+        print(f"Modules:  {', '.join(result['modules'])}")
+
+    if result["error"]:
+        print(f"Status:   {result['error']}")
+
+
+def scan_hosts(hosts):
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {
+            executor.submit(inspect_mongodb, host): host
+            for host in hosts
+        }
+
+        for future in as_completed(futures):
+            print_result(future.result())
+
+
 def main():
-    subnet = input("Enter the subnet to scan (e.g., 192.168.1.0/24 or 'localhost' for local scan): ")
-    if subnet.lower() in ["localhost", "127.0.0.1"]:
-        hosts = ['mongodb://127.0.0.1:27017']
+    subnet = input(
+        "Enter subnet "
+        "(example: 192.168.1.0/24 or localhost): "
+    ).strip()
+
+    if subnet.lower() in {"localhost", "127.0.0.1"}:
+        hosts = [f"mongodb://127.0.0.1:{MONGODB_PORT}"]
     else:
         hosts = run_nmap_scan(subnet)
-    
-    if hosts:
-        print("[+] Starting MongoDB Edition Checks...")
-        for host in hosts:
-            check_mongodb_features(host)
-    else:
+
+    if not hosts:
         print("[-] No MongoDB instances detected.")
+        return
+
+    print()
+    print("[+] Inspecting MongoDB deployments...")
+
+    scan_hosts(hosts)
+
 
 if __name__ == "__main__":
     main()
