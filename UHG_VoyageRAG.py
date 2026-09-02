@@ -1,4 +1,5 @@
 #This demo uses paid tier keys 🔑
+
 import pymongo
 from voyageai import Client as VoyageClient
 import openai
