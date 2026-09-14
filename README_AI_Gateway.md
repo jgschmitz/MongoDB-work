@@ -9,7 +9,6 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-Ready-00ED64?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Mode](https://img.shields.io/badge/Mode-100%25_Simulated-B896FF?style=for-the-badge)
 
-No Atlas cluster. No API keys. No external model. No network calls.
 
 </div>
 
