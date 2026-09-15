@@ -47,6 +47,13 @@ The entire experience runs locally using generated data stored only in the curre
 
 Click **Seed Demo Data** in the sidebar. The application generates realistic traffic across multiple applications, environments, identities, providers, and models.
 
+<code>
+# --- Mongo ---
+client = pymongo.MongoClient("mongodb+srv://jschmitz:gcp2025@darkstar.tnhx6.mongodb.net/?retryWrites=true&w=majority")
+db = client.mixtureexperts
+collection = db.voyage4demo
+</code>
+
 Nothing is written to disk. Refreshing or restarting the Streamlit session resets the data.
 
 ## Recommended demo flow
