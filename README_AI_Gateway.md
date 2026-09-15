@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ AI Gateway Control Plane
+# ⚡ AI Gateway Control Plane on MongoDB 🍃
 
 ### A fully simulated Streamlit experience for AI operations, observability, governance, and cost
 
