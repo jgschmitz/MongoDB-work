@@ -54,7 +54,7 @@ db = client.mixtureexperts
 collection = db.voyage4demo
 </code>
 
-Nothing is written to disk. Refreshing or restarting the Streamlit session resets the data.
+blah...blah blah.....
 
 ## Recommended demo flow
 
