@@ -1,47 +1,148 @@
-from datasets import load_dataset
-from voyageai import Client as VoyageClient
+"""
+Evaluate a Voyage embedding model using duplicate Quora questions.
+
+Install:
+    pip install datasets voyageai numpy
+
+Run:
+    python quora_retrieval.py
+"""
+
+from __future__ import annotations
+
 import numpy as np
-from scipy.spatial.distance import cdist
-import random
+import voyageai
+from datasets import load_dataset
 
-# ==== Config ====
-api_key = "" # put your voyage key here 
-model_name = "voyage-2" # you can swap out the model here!
-max_pairs = 100
 
-print("📦 Loading Quora Question Pairs...")
-dataset = load_dataset("quora", split="train") #plug in your own dataset if you wish
+# ==== Configuration ====
 
-# Filter for only matching (duplicate) question pairs
-positive_pairs = [
-    (item["questions"]["text"][0], item["questions"]["text"][1])
-    for item in dataset
-    if item["is_duplicate"]
-]
+VOYAGE_API_KEY = ""  # Put your Voyage AI key here
+MODEL_NAME = "voyage-4-large"
+MAX_PAIRS = 100
+BATCH_SIZE = 128
+RANDOM_SEED = 42
 
-sampled = random.sample(positive_pairs, min(max_pairs, len(positive_pairs)))
-query_texts = [q1 for q1, _ in sampled]
-doc_texts = [q2 for _, q2 in sampled]
 
-print(f"\n🔍 Preparing {len(sampled)} positive query-doc pairs...")
+def sample_positive_pairs(
+    max_pairs: int,
+    seed: int,
+) -> list[tuple[str, str]]:
+    """Load a reproducible sample of duplicate Quora questions."""
 
-# ==== Embedding ====
-def normalize(vectors):
+    print("📦 Loading Quora Question Pairs...")
+
+    dataset = load_dataset("quora", split="train").shuffle(seed=seed)
+    pairs: list[tuple[str, str]] = []
+
+    for item in dataset:
+        questions = item["questions"]["text"]
+
+        if (
+            item["is_duplicate"]
+            and len(questions) == 2
+            and all(isinstance(text, str) and text.strip() for text in questions)
+        ):
+            pairs.append((questions[0], questions[1]))
+
+        if len(pairs) == max_pairs:
+            break
+
+    if not pairs:
+        raise ValueError("No valid duplicate question pairs were found.")
+
+    return pairs
+
+
+def normalize(vectors: np.ndarray) -> np.ndarray:
+    """L2-normalize a matrix of embedding vectors."""
+
     norms = np.linalg.norm(vectors, axis=1, keepdims=True)
-    return vectors / np.clip(norms, 1e-8, None)
 
-if not query_texts or not doc_texts:
-    raise ValueError("🚨 No valid query-doc pairs were found!")
+    if np.any(norms == 0):
+        raise ValueError("Voyage returned one or more zero-length embeddings.")
 
-print(f"\n🧠 Embedding {len(query_texts)} query-doc pairs using model: {model_name}")
-voyage = VoyageClient(api_key=api_key)
+    return vectors / norms
 
-q_vecs = normalize(np.nan_to_num(voyage.embed(query_texts, model=model_name).embeddings))
-d_vecs = normalize(np.nan_to_num(voyage.embed(doc_texts, model=model_name).embeddings))
 
-# ==== Top-1 Retrieval Accuracy ====
-sims = 1 - cdist(q_vecs, d_vecs, metric="cosine")
-hits = sum(np.argmax(row) == i for i, row in enumerate(sims))
-accuracy = hits / len(query_texts)
+def embed_texts(
+    client: voyageai.Client,
+    texts: list[str],
+    input_type: str,
+) -> np.ndarray:
+    """Embed texts in batches and return normalized vectors."""
 
-print(f"\n✅ Top-1 Retrieval Accuracy on Quora Pairs ({model_name}): {accuracy:.2%}")
+    batches: list[np.ndarray] = []
+
+    for start in range(0, len(texts), BATCH_SIZE):
+        batch = texts[start : start + BATCH_SIZE]
+
+        response = client.embed(
+            texts=batch,
+            model=MODEL_NAME,
+            input_type=input_type,
+        )
+
+        vectors = np.asarray(response.embeddings, dtype=np.float32)
+
+        if not np.isfinite(vectors).all():
+            raise ValueError("Voyage returned invalid embedding values.")
+
+        batches.append(vectors)
+
+    return normalize(np.vstack(batches))
+
+
+def calculate_metrics(
+    query_vectors: np.ndarray,
+    document_vectors: np.ndarray,
+) -> tuple[float, float, float]:
+    """Calculate Top-1 accuracy, Recall@5, and MRR."""
+
+    similarities = query_vectors @ document_vectors.T
+    rankings = np.argsort(-similarities, axis=1)
+
+    expected_documents = np.arange(len(query_vectors))
+    correct_ranks = (
+        np.argmax(rankings == expected_documents[:, np.newaxis], axis=1) + 1
+    )
+
+    top_1_accuracy = np.mean(correct_ranks == 1)
+    recall_at_5 = np.mean(correct_ranks <= 5)
+    mean_reciprocal_rank = np.mean(1.0 / correct_ranks)
+
+    return top_1_accuracy, recall_at_5, mean_reciprocal_rank
+
+
+def main() -> None:
+    if not VOYAGE_API_KEY.strip():
+        raise ValueError("Add your Voyage AI API key to VOYAGE_API_KEY.")
+
+    pairs = sample_positive_pairs(MAX_PAIRS, RANDOM_SEED)
+    query_texts, document_texts = map(list, zip(*pairs))
+
+    print(f"🔍 Preparing {len(pairs)} duplicate question pairs...")
+    print(f"🧠 Embedding with {MODEL_NAME}...")
+
+    client = voyageai.Client(api_key=VOYAGE_API_KEY)
+
+    query_vectors = embed_texts(client, query_texts, input_type="query")
+    document_vectors = embed_texts(
+        client,
+        document_texts,
+        input_type="document",
+    )
+
+    top_1, recall_5, mrr = calculate_metrics(
+        query_vectors,
+        document_vectors,
+    )
+
+    print(f"\n📊 Quora retrieval results — {MODEL_NAME}")
+    print(f"   Top-1 Accuracy: {top_1:.2%}")
+    print(f"   Recall@5:      {recall_5:.2%}")
+    print(f"   MRR:           {mrr:.4f}")
+
+
+if __name__ == "__main__":
+    main()
