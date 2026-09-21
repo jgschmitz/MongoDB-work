@@ -1,3 +1,4 @@
+# super quick and easy voyage AI demo 
 import pymongo
 from voyageai import Client  # Import the VoyageAI client
 
