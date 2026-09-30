@@ -1,3 +1,4 @@
+# simpler than msizer runs super fast 
 db.getCollectionNames()
   .map(name => {
     const stats = db.getCollection(name).stats();
