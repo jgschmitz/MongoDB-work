@@ -31,7 +31,7 @@ st.set_page_config(
 # Paste the Atlas URI below. Nothing else is required.
 # ============================================================
 
-MONGODB_URI = "mongodb+srv://jschmitz:gcp2025@darkstar.tnhx6.mongodb.net/?retryWrites=true&w=majority"
+MONGODB_URI = ""
 
 DATABASE_NAME = "surgical_supply_analytics_demo"
 CASES_COLLECTION = "surgical_cases"
