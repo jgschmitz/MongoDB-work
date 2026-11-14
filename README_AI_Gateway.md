@@ -49,7 +49,7 @@ Click **Seed Demo Data** in the sidebar. The application generates realistic tra
 
 <code>
 # --- Mongo ---
-client = pymongo.MongoClient("mongodb+srv://jschmitz:gcp2025@darkstar.tnhx6.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("")
 db = client.mixtureexperts
 collection = db.voyage4demo
 </code>
