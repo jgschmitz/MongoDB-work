@@ -1,3 +1,4 @@
+#updated edition scanner tells teams who is running community or enterprise mongodb 
 import subprocess
 import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor, as_completed
